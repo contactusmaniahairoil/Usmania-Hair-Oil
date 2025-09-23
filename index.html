@@ -18,6 +18,7 @@
             <a href="#" class="brand-title text-3xl font-bold text-emerald-700">USMANIA HAIR OIL</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#fayde" class="text-gray-600 hover:text-emerald-600 transition duration-300">Fayde</a>
+                <a href="#gallery" class="text-gray-600 hover:text-emerald-600 transition duration-300">Gallery</a>
                 <a href="#ingredients" class="text-gray-600 hover:text-emerald-600 transition duration-300">Ingredients</a>
                 <a href="#reviews" class="text-gray-600 hover:text-emerald-600 transition duration-300">Reviews</a>
                 <a href="#hair-plan" class="text-gray-600 hover:text-emerald-600 transition duration-300">AI Hair Plan</a>
@@ -220,7 +221,7 @@
                                 <option value="Dullness (Bejaan baal)">Dullness (Bejaan baal)</option>
                             </select>
                         </div>
-                        <button id="generate-plan-btn" class="bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-emerald-700 transition duration-300 w-full">
+                        <button id="generate-plan-btn" onclick="generatePlan()" class="bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-emerald-700 transition duration-300 w-full">
                            ✨ Mera Plan Banayein
                         </button>
                     </div>
@@ -272,20 +273,36 @@
                                 Details WhatsApp Karein
                             </h3>
                             <p class="text-center text-gray-600 mb-4">Payment ka screenshot aur apna address neeche diye format mein hamare WhatsApp number <strong class="text-emerald-600">8750460640</strong> par bhejein.</p>
-                            <div class="bg-gray-100 p-4 rounded-lg w-full text-gray-700 leading-relaxed">
-                                <strong>Name -</strong><br>
-                                <strong>Mobile number -</strong><br>
-                                <strong>Quantity -</strong><br>
-                                <strong>Vill-/City -</strong><br>
-                                <strong>Pin code -</strong><br>
-                                <strong>Post office -</strong><br>
-                                <strong>NEAR by Add -</strong>
+                            <div class="bg-gray-100 p-4 rounded-lg w-full text-gray-700 leading-relaxed mb-4">
+                                <div class="mb-2"><label for="name" class="font-semibold">Name:</label><input id="name" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="mobile" class="font-semibold">Mobile number:</label><input id="mobile" type="tel" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="quantity" class="font-semibold">Quantity:</label><input id="quantity" type="number" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="city" class="font-semibold">Vill-/City:</label><input id="city" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="pin" class="font-semibold">Pin code:</label><input id="pin" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="post" class="font-semibold">Post office:</label><input id="post" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
+                                <div class="mb-2"><label for="near" class="font-semibold">NEAR by Add:</label><input id="near" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
                             </div>
-                             <a href="https://wa.me/918750460640?text=Hello%20Usmania%20Hair%20Oil,%20maine%20%E2%82%B999%20advance%20payment%20kar%20di%20hai.%20Please%20mera%20order%20confirm%20karein.%20Yahan%20meri%20details%20hain:%0A%0AName%20-%0AMobile%20number%20-%0AQuantity%20-%0AVill-/City%20-%0APin%20code%20-%0APost%20office%20-%0ANEAR%20by%20Add%20-%0A%0A(Please%20attach%20payment%20screenshot%20here)" target="_blank" class="bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition duration-300 w-full animate-pulse mt-6 flex items-center justify-center">
+                             <a href="#buy" class="bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition duration-300 w-full animate-pulse mt-6 flex items-center justify-center" onclick="sendToWhatsApp(event)">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.654 4.388 1.846 6.166l-1.117 4.096 4.188-1.099z"/></svg>
                                 WhatsApp Par Bhejein
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery Section -->
+        <section id="gallery" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Product <span class="text-emerald-600">Gallery</span></h2>
+                <div class="flex justify-center">
+                    <div class="slider-container">
+                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.01_c9b92b35.jpg" class="slider-img active" alt="Usmania Hair Oil Bottle 1">
+                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.02_a3c3c661.jpg" class="slider-img" alt="Usmania Hair Oil Bottle 2">
+                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.04_0c3da91f.jpg" class="slider-img" alt="Usmania Hair Oil Bottle 3">
+                        <button class="slider-btn left" onclick="prevSlide()">◀</button>
+                        <button class="slider-btn right" onclick="nextSlide()">▶</button>
                     </div>
                 </div>
             </div>
