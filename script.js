@@ -1,6 +1,14 @@
-// Product Image Slider
+// Product Image Slider & Interactivity
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slider-img');
+const sliderContainer = document.querySelector('.slider-container');
+const sliderAutoplayDelay = 4500;
+let sliderInterval;
+
+// Hair plan elements
+const generatePlanBtn = document.getElementById('generate-plan-btn');
+const loader = document.getElementById('loader');
+const geminiResponseDiv = document.getElementById('gemini-response');
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -18,14 +26,27 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
+function startSliderAutoplay() {
+    if (slides.length <= 1 || sliderInterval) return;
+    sliderInterval = setInterval(() => {
+        nextSlide();
+    }, sliderAutoplayDelay);
+}
+
+function stopSliderAutoplay() {
+    if (!sliderInterval) return;
+    clearInterval(sliderInterval);
+    sliderInterval = null;
+}
+
 // Touch/Swipe Support for Mobile
 let startX = 0;
 let endX = 0;
-const sliderContainer = document.querySelector('.slider-container');
 
 if (sliderContainer) {
     sliderContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
+        stopSliderAutoplay();
     });
 
     sliderContainer.addEventListener('touchend', (e) => {
@@ -38,8 +59,96 @@ if (sliderContainer) {
                 prevSlide(); // Swipe right to previous
             }
         }
+        startSliderAutoplay();
+    });
+
+    sliderContainer.addEventListener('mouseenter', stopSliderAutoplay);
+    sliderContainer.addEventListener('mouseleave', startSliderAutoplay);
+}
+
+if (slides.length) {
+    showSlide(currentSlide);
+    // Delay autoplay slightly to avoid clashing with initial reveal
+    setTimeout(startSliderAutoplay, 1200);
+}
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        stopSliderAutoplay();
+    } else if (sliderContainer && sliderContainer.matches(':hover') === false) {
+        startSliderAutoplay();
+    }
+});
+
+// Scroll-triggered reveal animations
+const revealElements = document.querySelectorAll('[data-reveal]');
+
+if (revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    revealElements.forEach((el) => {
+        const delay = el.getAttribute('data-reveal-delay');
+        if (delay) {
+            el.style.setProperty('--reveal-delay', `${delay}ms`);
+        }
+        revealObserver.observe(el);
     });
 }
+
+// Header shrink & navigation highlight on scroll
+const header = document.getElementById('site-header');
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const headerScrollThreshold = 80;
+let scrollTicking = false;
+
+function updateHeaderState() {
+    if (!header) return;
+    header.classList.toggle('header-scrolled', window.scrollY > headerScrollThreshold);
+}
+
+function updateActiveNavLink() {
+    const scrollPosition = window.scrollY + 140;
+    let activeId = '';
+
+    sections.forEach((section) => {
+        const top = section.offsetTop;
+        const bottom = top + section.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < bottom) {
+            activeId = section.id;
+        }
+    });
+
+    navLinks.forEach((link) => {
+        const targetId = link.getAttribute('href')?.replace('#', '') || '';
+        link.classList.toggle('active', targetId === activeId);
+    });
+}
+
+function onScroll() {
+    if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+            updateHeaderState();
+            updateActiveNavLink();
+            scrollTicking = false;
+        });
+        scrollTicking = true;
+    }
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+updateHeaderState();
+updateActiveNavLink();
 
 // Static Hair Care Plans (replaces AI API)
 const hairPlans = {
