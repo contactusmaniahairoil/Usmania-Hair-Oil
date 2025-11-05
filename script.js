@@ -362,3 +362,65 @@ function generatePlan() {
     generatePlanBtn.disabled = false;
     generatePlanBtn.innerHTML = '✨ Mera Plan Banayein';
 }
+
+function sendToWhatsApp(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const name = document.getElementById('name')?.value.trim();
+    const mobile = document.getElementById('mobile')?.value.trim();
+    const quantity = document.getElementById('quantity')?.value.trim();
+    const city = document.getElementById('city')?.value.trim();
+    const pin = document.getElementById('pin')?.value.trim();
+    const post = document.getElementById('post')?.value.trim();
+    const near = document.getElementById('near')?.value.trim();
+
+    if (!name || !mobile || !quantity || !city || !pin || !post || !near) {
+        alert('Kripya form ke saare details bhar dein.');
+        return;
+    }
+
+    const phoneNumber = '919520007159';
+    const messageLines = [
+        'Namaste Usmania Hair Oil Team,',
+        '',
+        'Payment ka screenshot attached hai.',
+        `Name: ${name}`,
+        `Mobile: ${mobile}`,
+        `Quantity: ${quantity}`,
+        `Vill-/City: ${city}`,
+        `Pin code: ${pin}`,
+        `Post office: ${post}`,
+        `NEAR by Add: ${near}`,
+    ];
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageLines.join('\n'))}`;
+
+    // Using location.href ensures Android opens WhatsApp app when available.
+    window.location.href = whatsappUrl;
+}
+
+function shareUpiIntent() {
+    const upiParams = new URLSearchParams({
+        pa: '0952007159@ptyes',
+        pn: 'Usmania Hair Oil',
+        tn: 'Usmania Hair Oil Advance Payment',
+        am: '99',
+        cu: 'INR',
+    });
+
+    const upiUrl = `upi://pay?${upiParams.toString()}`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Usmania Hair Oil - Advance Payment',
+            text: '₹99 ka advance payment karne ke liye apna UPI app chunein:',
+            url: upiUrl,
+        }).catch(() => {
+            alert('Share option cancel hua ya open nahi hua. Kripya QR scan karein ya UPI ID manually use karein: 0952007159@ptyes');
+        });
+    } else {
+        alert('Aapke browser mein share option support nahi hai. Kripya QR scan karein ya UPI ID manually use karein: 0952007159@ptyes');
+    }
+}
