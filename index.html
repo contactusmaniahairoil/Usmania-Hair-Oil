@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gray-50 text-gray-800 smooth-scroll">
 
     <!-- Header / Navigation Bar -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="brand-title text-3xl font-bold text-emerald-700">USMANIA HAIR OIL</a>
+            <a href="#" class="brand-title flex items-center gap-2">
+                <img src="assets/logo.png" alt="Usmania Hair Oil Logo" class="h-12 w-auto">
+            </a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#fayde" class="text-gray-600 hover:text-emerald-600 transition duration-300">Fayde</a>
                 <a href="#video" class="text-gray-600 hover:text-emerald-600 transition duration-300">Video</a>
                 <a href="#gallery" class="text-gray-600 hover:text-emerald-600 transition duration-300">Gallery</a>
-                <a href="#ingredients" class="text-gray-600 hover:text-emerald-600 transition duration-300">Ingredients</a>
+                <a href="#ingredients"
+                    class="text-gray-600 hover:text-emerald-600 transition duration-300">Ingredients</a>
                 <a href="#reviews" class="text-gray-600 hover:text-emerald-600 transition duration-300">Reviews</a>
-                <a href="#hair-plan" class="text-gray-600 hover:text-emerald-600 transition duration-300">AI Hair Plan</a>
-                <a href="#how-to-use" class="text-gray-600 hover:text-emerald-600 transition duration-300">Kaise Istemal Karein</a>
+                <a href="#hair-plan" class="text-gray-600 hover:text-emerald-600 transition duration-300">AI Hair
+                    Plan</a>
+                <a href="#how-to-use" class="text-gray-600 hover:text-emerald-600 transition duration-300">Kaise Istemal
+                    Karein</a>
             </div>
-            <a href="#buy" class="bg-emerald-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-emerald-700 transition duration-300 shadow-sm">
+            <a href="#buy"
+                class="bg-emerald-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-emerald-700 transition duration-300 shadow-sm">
                 Abhi Khareedein
             </a>
         </nav>
@@ -33,334 +43,1019 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-bg py-20">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 leading-tight mb-4">
-                        Girte Baalon Ko Kahein <span class="text-emerald-600">Alvida!</span>
+        <section class="hero-bg py-24 relative">
+            <!-- Background Blobs -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
+                <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0" data-reveal="fade-right">
+                    <span class="text-gold font-bold tracking-wider uppercase text-sm mb-2 block">100% Natural Ayurvedic
+                        Care</span>
+                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6 font-display">
+                        Girte Baalon Ko <br><span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">Kahein
+                            Alvida!</span>
                     </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        पेश है उस्मानिया हेयर ऑयल - 100% शुद्ध और प्राकृतिक जड़ी-बूटियों से बना एक आयुर्वेदिक समाधान जो आपके बालों को जड़ों से मजबूत बनाए और दे एक नई जान।
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                        पेश है <strong>उस्मानिया हेयर ऑयल</strong> - शुद्ध जड़ी-बूटियों और माँ के नुस्खों से बना वो
+                        समाधान जो आपके बालों को जड़ों से मजबूत बनाए।
                     </p>
-                    <a href="#buy" class="bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-emerald-700 transition duration-300 shadow-lg transform hover:scale-105">
-                        Order Now
-                    </a>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <!-- Product Image Placeholder -->
-                    <img src="assets/WhatsApp Image 2025-09-22 at 22.47.01_c9b92b35.jpg" alt="Usmania Hair Oil Bottle" class="rounded-lg shadow-2xl" style="width: 80%; height: auto;">
-                </div>
-            </div>
-        </section>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#buy"
+                            class="interactive-cta py-4 px-10 rounded-full text-lg font-bold shadow-xl transform transition hover:scale-105">
+                            Order Now
+                        </a>
+                        <a href="#video"
+                            class="bg-white text-emerald-800 border-2 border-emerald-50 py-4 px-10 rounded-full text-lg font-semibold hover:bg-emerald-50 transition duration-300 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Watch Video
+                        </a>
+                    </div>
 
-        <!-- Fayde / Benefits Section -->
-        <section id="fayde" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-2" data-reveal="fade-up">Usmania Hair Oil Ke <span class="text-emerald-600">Fayde</span></h2>
-                <p class="text-center text-gray-500 mb-12" data-reveal="fade-up" data-reveal-delay="100">Ek tel, fayde anek.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Benefit 1 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-reveal="fade-up">
-                        <div class="text-emerald-500 mb-4 inline-block">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    <div
+                        class="mt-8 flex items-center justify-center md:justify-start gap-4 text-sm text-gray-500 font-medium">
+                        <div class="flex items-center gap-1">
+                            <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            4.8/5 Rating
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Baalon Ka Girna Roke</h3>
-                        <p class="text-gray-600">Jadon ko majboot banakar baalon ka girna 90% tak kam kare.</p>
-                    </div>
-                    <!-- Benefit 2 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-reveal="fade-up" data-reveal-delay="100">
-                        <div class="text-emerald-500 mb-4 inline-block">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m6 4v4m-2-2h4M6 3a9 9 0 0112 0v12a9 9 0 01-12 0V3z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Dandruff (Rusi) Hataye</h3>
-                        <p class="text-gray-600">Iske anti-fungal gun rusi ko jad se khatam karte hain.</p>
-                    </div>
-                    <!-- Benefit 3 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-reveal="fade-up" data-reveal-delay="200">
-                        <div class="text-emerald-500 mb-4 inline-block">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Naye Baal Ugaaye</h3>
-                        <p class="text-gray-600">Scalp mein blood circulation badhakar naye baal ugane mein madad kare.</p>
-                    </div>
-                    <!-- Benefit 4 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-reveal="fade-up" data-reveal-delay="300">
-                       <div class="text-emerald-500 mb-4 inline-block">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m6 4v4m-2-2h4M6 3a9 9 0 0112 0v12a9 9 0 01-12 0V3z" /></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Kudrati Chamak De</h3>
-                        <p class="text-gray-600">Rukhe aur bejaan baalon ko banaye silky aur shiny.</p>
+                        <div class="w-1 h-1 bg-gray-300 rounded-full"></div>
+                        <div>10,000+ Happy Customers</div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Ingredients Section -->
-        <section id="ingredients" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12" data-reveal="fade-up">Prakritik <span class="text-emerald-600">Jadi-Bootiyan</span></h2>
-                <div class="ingredient-grid">
-                    <div class="ingredient-card text-center" data-reveal="scale-up">
-                        <div class="ingredient-ring">
-                            <div class="ingredient-image">
-                                <img src="assets/vecteezy_amla-png-transparent-background_29228880.png" alt="Amla">
-                            </div>
-                        </div>
-                        <h3 class="ingredient-name">Amla</h3>
-                        <p class="ingredient-benefit">Vitamin C se bharpoor, jodon ko majboot kare aur hair fall kam kare.</p>
+                <div class="md:w-1/2 flex justify-center relative">
+                    <!-- Decorative Ring -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-emerald-100 to-transparent rounded-full opacity-30 transform scale-90 blur-2xl">
                     </div>
-                    <div class="ingredient-card text-center" data-reveal="scale-up" data-reveal-delay="100">
-                        <div class="ingredient-ring">
-                            <div class="ingredient-image">
-                                <img src="assets/image.png" alt="Bhringraj">
-                            </div>
-                        </div>
-                        <h3 class="ingredient-name">Bhringraj</h3>
-                        <p class="ingredient-benefit">Scalp ko rejuvenate kare, naye baal ugane me madad kare aur shine badhaye.</p>
-                    </div>
-                    <div class="ingredient-card text-center" data-reveal="scale-up" data-reveal-delay="200">
-                        <div class="ingredient-ring">
-                            <div class="ingredient-image">
-                                <img src="assets/s11728_neem_isolated_on_white_background_-stylize_200_e5717d1f-c632-491f-9ced-53cc98672ff0_1-photoroom-quvh75mxaupjbihl2wx2wzce59sbvr8o25ia2owexs.png" alt="Neem">
-                            </div>
-                        </div>
-                        <h3 class="ingredient-name">Neem</h3>
-                        <p class="ingredient-benefit">Anti-fungal properties ke saath rusi dur kare aur scalp ko detoxify kare.</p>
-                    </div>
-                    <div class="ingredient-card text-center" data-reveal="scale-up" data-reveal-delay="300">
-                        <div class="ingredient-ring">
-                            <div class="ingredient-image">
-                                <img src="assets/brahmi.png" alt="Brahmi">
-                            </div>
-                        </div>
-                        <h3 class="ingredient-name">Brahmi</h3>
-                        <p class="ingredient-benefit">Stress ko kam kare, blood circulation badhaye aur dandruff se bachaye.</p>
-                    </div>
-                    <div class="ingredient-card text-center" data-reveal="scale-up" data-reveal-delay="400">
-                        <div class="ingredient-ring">
-                            <div class="ingredient-image">
-                                <img src="assets/coconut-oil-fall-from-coconut-on-transparent-background-free-png.png" alt="Coconut Oil">
-                            </div>
-                        </div>
-                        <h3 class="ingredient-name">Nariyal Tel</h3>
-                        <p class="ingredient-benefit">Deep conditioning de, dryness door kare aur baalon ko silky banaye.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- How to Use Section -->
-        <section id="how-to-use" class="py-20 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-12" data-reveal="fade-up">Istemal Ka Sahi <span class="text-emerald-600">Tarika</span></h2>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
-                    <div class="text-center w-60" data-reveal="fade-up">
-                        <div class="bg-emerald-100 text-emerald-600 font-bold text-2xl h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">1</div>
-                        <h3 class="font-semibold text-lg mb-2">Tel Lagayein</h3>
-                        <p class="text-gray-600">Thoda sa tel lekar ungliyon se scalp par dheere-dheere massage karein.</p>
-                    </div>
-                    <div class="text-center w-60" data-reveal="fade-up" data-reveal-delay="100">
-                        <div class="bg-emerald-100 text-emerald-600 font-bold text-2xl h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">2</div>
-                        <h3 class="font-semibold text-lg mb-2">Raat Bhar Chhodein</h3>
-                        <p class="text-gray-600">Behtareen result ke liye, tel ko raat bhar laga rehne dein.</p>
-                    </div>
-                    <div class="text-center w-60" data-reveal="fade-up" data-reveal-delay="200">
-                        <div class="bg-emerald-100 text-emerald-600 font-bold text-2xl h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">3</div>
-                        <h3 class="font-semibold text-lg mb-2">Shampoo Karein</h3>
-                        <p class="text-gray-600">Subah kisi mild shampoo se baalon ko dho lein.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Customer Reviews Section -->
-        <section id="reviews" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12" data-reveal="fade-up">Hamare Grahakon Ki <span class="text-emerald-600">Raye</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-lg" data-reveal="fade-up">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/48x48/E0E7FF/4F46E5?text=RK" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                    <!-- Product Image -->
+                    <img src="assets/real-shot-2.jpg" alt="Usmania Hair Oil Premium Bottle"
+                        class="relative z-10 w-3/4 md:w-2/3 h-auto drop-shadow-2xl floating rounded-2xl">
+
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-10 right-10 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg floating-slow border border-white/50 z-20 hidden md:block">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 p-2 rounded-full text-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
                             <div>
-                                <p class="font-bold">Ravi Kumar</p>
-                                <div class="flex text-yellow-400">★★★★★</div>
+                                <p class="text-xs text-gray-500 uppercase font-bold">Resulsts in</p>
+                                <p class="font-bold text-gray-800">4 Weeks</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 italic">"Mera hair fall 1 mahine mein hi kaafi kam ho gaya. Kamaal ka product hai!"</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg" data-reveal="fade-up" data-reveal-delay="100">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/48x48/FEE2E2/B91C1C?text=SP" alt="Customer" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold">Sunita Patel</p>
-                                <div class="flex text-yellow-400">★★★★★</div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic">"Is tel ki khushbu bahut acchi hai aur isne mere baalon ko bohot soft bana diya hai."</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg" data-reveal="fade-up" data-reveal-delay="200">
-                        <div class="flex items-center mb-4">
-                            <img src="https://placehold.co/48x48/D1FAE5/065F46?text=AS" alt="Customer" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="font-bold">Amit Sharma</p>
-                                <div class="flex text-yellow-400">★★★★☆</div>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 italic">"Dandruff ke liye best oil hai. 2 hafte mein hi dandruff gayab ho gaya."</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gemini AI Hair Plan Section -->
-        <section id="hair-plan" class="py-20 bg-emerald-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-gray-800 mb-2" data-reveal="fade-up">Aapke Liye Khas Hair Care Plan ✨</h2>
-                <p class="text-gray-600 text-lg mb-8" data-reveal="fade-up" data-reveal-delay="100">Apni hair details batayein aur payein AI-powered personalized routine!</p>
-
-                <div class="bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto text-left" data-reveal="fade-up" data-reveal-delay="150">
-                    <div id="hair-plan-form">
-                        <div class="mb-4">
-                            <label for="hair-type" class="block text-gray-700 font-semibold mb-2">Aapke baal kaise hain?</label>
-                            <select id="hair-type" class="w-full p-3 border border-gray-300 rounded-lg">
-                                <option value="Oily (Teliya)">Oily (Teliya)</option>
-                                <option value="Dry (Rukhe)">Dry (Rukhe)</option>
-                                <option value="Normal (Samanya)">Normal (Samanya)</option>
-                            </select>
+        <!-- Product Showcase Section -->
+        <section id="product-showcase" class="py-20 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Gallery -->
+                <div class="flex flex-col-reverse md:flex-row gap-4" data-reveal="fade-right">
+                    <!-- Thumbnails -->
+                    <div
+                        class="flex flex-row md:flex-col gap-4 overflow-x-auto md:overflow-y-auto no-scrollbar md:h-[500px] w-full md:w-24 shrink-0">
+                        <div class="thumbnail active cursor-pointer border-2 border-emerald-500 rounded-lg overflow-hidden h-24 w-24 shrink-0"
+                            onclick="changeShowcaseImage(this, 'assets/real-shot-2.jpg')">
+                            <img src="assets/real-shot-2.jpg" class="w-full h-full object-cover" alt="Real Shot 2">
                         </div>
-                        <div class="mb-4">
-                            <label for="hair-concern" class="block text-gray-700 font-semibold mb-2">Aapki mukhya samasya kya hai?</label>
-                            <select id="hair-concern" class="w-full p-3 border border-gray-300 rounded-lg">
-                                <option value="Hair Fall (Baalon ka girna)">Hair Fall (Baalon ka girna)</option>
-                                <option value="Dandruff (Rusi)">Dandruff (Rusi)</option>
-                                <option value="Slow Growth (Dheemi growth)">Slow Growth (Dheemi growth)</option>
-                                <option value="Dullness (Bejaan baal)">Dullness (Bejaan baal)</option>
-                            </select>
+                        <div class="thumbnail cursor-pointer border-2 border-transparent hover:border-emerald-200 rounded-lg overflow-hidden h-24 w-24 shrink-0 transition-colors"
+                            onclick="changeShowcaseImage(this, 'assets/hero-premium.png')">
+                            <img src="assets/hero-premium.png" class="w-full h-full object-contain bg-gray-50 p-2"
+                                alt="Premium Look">
                         </div>
-                        <button id="generate-plan-btn" onclick="generatePlan()" class="interactive-cta bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-emerald-700 transition duration-300 w-full">
-                           ✨ Mera Plan Banayein
-                        </button>
+                        <div class="thumbnail cursor-pointer border-2 border-transparent hover:border-emerald-200 rounded-lg overflow-hidden h-24 w-24 shrink-0 transition-colors"
+                            onclick="changeShowcaseImage(this, 'assets/real-shot-1.jpg')">
+                            <img src="assets/real-shot-1.jpg" class="w-full h-full object-cover" alt="Real Shot 1">
+                        </div>
                     </div>
-                    <div id="gemini-response-container" class="mt-6" style="white-space: pre-wrap;">
-                         <!-- Loading spinner will appear here -->
-                         <div id="loader" class="mx-auto hidden loader"></div>
-                         <!-- AI response will be shown here -->
-                        <div id="gemini-response" class="text-left bg-gray-50 p-6 rounded-lg hidden"></div>
+
+                    <!-- Main Image -->
+                    <div
+                        class="bg-gray-50 rounded-2xl flex items-center justify-center p-8 h-[500px] w-full relative group overflow-hidden">
+                        <img id="showcase-main-img" src="assets/real-shot-2.jpg" alt="Usmania Hair Oil"
+                            class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+                            Best Seller</div>
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="space-y-8" data-reveal="fade-left">
+                    <div>
+                        <h2 class="text-4xl font-bold font-display text-gray-900 mb-2">Usmania Anti-Hairfall Oil</h2>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex text-yellow-500 text-lg">
+                                ★★★★★
+                            </div>
+                            <span class="text-gray-500 text-sm">(10,000+ Verified Reviews)</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            Usmania Hair Oil ek mukammal Ayurvedic solution hai jo baalon ka girna rokne, naye baal
+                            ugane aur unhe majboot banane ke liye banaya gaya hai. 100% natural herbs se tayyar.
+                        </p>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div
+                        class="bg-emerald-50 p-6 rounded-xl border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div>
+                            <span class="block text-red-500 font-bold text-sm uppercase tracking-wide">Limited Time
+                                Offer</span>
+                            <div class="flex items-end gap-2">
+                                <span class="text-4xl font-bold text-gray-900">₹999</span>
+                                <span class="text-xl text-gray-400 line-through mb-1">₹1499</span>
+                            </div>
+                        </div>
+                        <div class="text-sm text-emerald-800 bg-emerald-100 px-4 py-2 rounded-lg font-medium">
+                            Save 30% Today!
+                        </div>
+                    </div>
+
+                    <!-- Trust Icons -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium text-gray-700">100% Natural</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium text-gray-700">No Side Effects</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium text-gray-700">Ayurvedic Herbs</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span class="font-medium text-gray-700">Cruelty Free</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div>
+                        <a href="#buy"
+                            class="interactive-cta block text-center bg-emerald-600 text-white font-bold text-xl py-4 rounded-xl shadow-xl hover:bg-emerald-700 transition-all transform hover:-translate-y-1">
+                            Buy Now &raquo; Save 30%
+                        </a>
+                        <p class="text-center text-sm text-gray-500 mt-3">Free Shipping | COD Available</p>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Buy Now Section -->
-        <section id="buy" class="py-20 hero-bg">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-gray-800 mb-2">Order Karne Ka Aasan Tarika</h2>
-                <p class="text-gray-600 text-xl mb-10">Bas 2 simple steps mein apna order complete karein!</p>
-                
-                <div class="bg-white inline-block p-6 md:p-8 rounded-lg shadow-2xl max-w-4xl w-full text-left">
-                    <!-- Price Details -->
-                    <div class="text-center mb-8 pb-4 border-b">
-                         <p class="text-5xl font-bold text-emerald-600 my-2">Total Price: ₹999</p>
-                         <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 mt-2">
-                            <span class="text-lg font-semibold text-gray-700">Advance Prepaid: <span class="text-emerald-600">₹99</span></span>
-                            <span class="text-lg font-semibold text-gray-700">Pay on Delivery: <span class="text-gray-800">₹900</span></span>
-                         </div>
-                         <p class="text-sm text-gray-500 mt-2">फेक ऑर्डर्स से बचने के लिए हम एक छोटा सा एडवांस लेते हैं।</p>
+
+            <!-- Comparison Section (Why Usmania vs Others) -->
+            <section id="comparison" class="py-24 bg-gray-50 relative overflow-hidden">
+                <!-- Background Decors -->
+                <div class="absolute inset-0 bg-hero-pattern opacity-10 pointer-events-none"></div>
+
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16" data-reveal="fade-up">
+                        <span class="text-gold font-bold uppercase tracking-widest text-xs mb-2 block">The Clear
+                            Winner</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Kyun Hai Usmania Sabse <span
+                                class="text-emerald-700">Behtar?</span></h2>
+                        <div class="w-16 h-1 bg-emerald-200 mx-auto rounded-full"></div>
                     </div>
-        
-                    <!-- Steps -->
-                    <div class="flex flex-col md:flex-row gap-8">
-                        <!-- Step 1: Payment -->
-                        <div class="md:w-1/2 flex flex-col items-center md:border-r md:pr-4">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                                <span class="bg-emerald-600 text-white rounded-full h-8 w-8 inline-flex items-center justify-center mr-2">1</span> 
-                                Advance Payment Karein
-                            </h3>
-                            <p class="text-center text-gray-600 mb-4">Neeche diye gaye QR code ko scan karke <span class="font-bold">₹99</span> ka advance payment karein.</p>
-                            <img src="assets/WhatsApp Image 2025-09-22 at 22.47.03_1a83145a.jpg" alt="Payment QR Code for Usmania Hair Oil" class="w-60 h-60 rounded-lg shadow-md">
-                            <p class="mt-2 text-sm text-gray-500 font-semibold">UPI ID: 0952007159@ptyes</p>
-                            <p class="mt-4 text-center text-red-600 font-semibold">Payment ke baad screenshot lena na bhoolein.</p>
-                            <div class="mt-5 w-full flex justify-center">
-                                <button type="button" class="interactive-cta bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold shadow flex items-center" onclick="shareUpiIntent()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M15 8a3 3 0 10-2.977-3.37l-5.49 2.93a3 3 0 100 4.88l5.49 2.93a3 3 0 10.894-1.789l-5.49-2.93a3.027 3.027 0 000-1.302l5.49-2.93C13.477 8.69 14.21 9 15 9z"/></svg>
-                                    Pay with UPI
+
+                    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
+                        data-reveal="scale-up">
+                        <!-- Header -->
+                        <div
+                            class="grid grid-cols-3 bg-gray-50 border-b border-gray-200 text-center py-6 font-display text-xl md:text-2xl tracking-wide">
+                            <div class="flex items-center justify-center text-gray-400 font-bold opacity-50">Feature
+                            </div>
+                            <div class="flex flex-col items-center justify-center text-gray-500 font-bold px-2">
+                                <span>Regular Oil</span>
+                            </div>
+                            <div
+                                class="flex flex-col items-center justify-center text-emerald-800 font-bold bg-emerald-50 -my-6 py-6 border-x border-emerald-100 relative">
+                                <div class="absolute top-0 left-0 w-full h-1 bg-gold"></div>
+                                <span>Usmania Oil</span>
+                                <span
+                                    class="text-xs font-sans text-gold font-bold mt-1 uppercase tracking-wider">Premium</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 1 -->
+                        <div
+                            class="grid grid-cols-3 text-center py-6 border-b border-dashed border-gray-100 items-center hover:bg-gray-50 transition-colors">
+                            <div class="text-sm md:text-lg font-medium text-gray-700">100% Natural</div>
+                            <div>
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="bg-emerald-50/30 -my-6 py-6 border-x border-emerald-50">
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm animate-pulse">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div
+                            class="grid grid-cols-3 text-center py-6 border-b border-dashed border-gray-100 items-center hover:bg-gray-50 transition-colors">
+                            <div class="text-sm md:text-lg font-medium text-gray-700">No Side Effects</div>
+                            <div>
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="bg-emerald-50/30 -my-6 py-6 border-x border-emerald-50">
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div
+                            class="grid grid-cols-3 text-center py-6 border-b border-dashed border-gray-100 items-center hover:bg-gray-50 transition-colors">
+                            <div class="text-sm md:text-lg font-medium text-gray-700">Handmade Quality</div>
+                            <div>
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="bg-emerald-50/30 -my-6 py-6 border-x border-emerald-50">
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Row 4 -->
+                        <div class="grid grid-cols-3 text-center py-6 items-center hover:bg-gray-50 transition-colors">
+                            <div class="text-sm md:text-lg font-medium text-gray-700">Results in 4 Weeks</div>
+                            <div>
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="bg-emerald-50/30 -my-6 py-6 border-x border-emerald-50">
+                                <span
+                                    class="mx-auto w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fayde / Benefits Section -->
+            <section id="fayde" class="py-24 bg-white relative overflow-hidden">
+                <!-- Decorative Background -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+                    <div
+                        class="absolute top-10 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl transform translate-x-1/2">
+                    </div>
+                    <div
+                        class="absolute bottom-10 left-0 w-64 h-64 bg-gold-light opacity-20 rounded-full blur-3xl transform -translate-x-1/2">
+                    </div>
+                </div>
+
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16" data-reveal="fade-up">
+                        <span class="text-gold font-bold uppercase tracking-widest text-xs mb-2 block">Why Choose
+                            Us</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Usmania Hair Oil Ke <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">Anokhe
+                                Fayde</span></h2>
+                        <div class="w-20 h-1.5 bg-gradient-to-r from-gold to-gold-light mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="grid-benefits">
+                        <!-- Benefit 1 -->
+                        <div class="feature-card group" data-reveal="fade-up">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Baalon Ka Girna Roke</h3>
+                            <p class="text-gray-500 leading-relaxed text-sm">Jadon ko majboot banakar baalon ka girna
+                                <span class="text-emerald-700 font-semibold">90% tak kam kare</span> pehle 2 hafto mein.
+                            </p>
+                        </div>
+                        <!-- Benefit 2 -->
+                        <div class="feature-card group" data-reveal="fade-up" data-reveal-delay="100">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Dandruff Hataye</h3>
+                            <p class="text-gray-500 leading-relaxed text-sm">Iske powerful anti-fungal gun rusi ko jad
+                                se
+                                khatam karte hain aur scalp clean rakhte hain.</p>
+                        </div>
+                        <!-- Benefit 3 -->
+                        <div class="feature-card group" data-reveal="fade-up" data-reveal-delay="200">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Naye Baal Ugaaye</h3>
+                            <p class="text-gray-500 leading-relaxed text-sm">Scalp mein micro-circulation badhakar naye
+                                baal
+                                ugane mein 3x tezi se madad kare.</p>
+                        </div>
+                        <!-- Benefit 4 -->
+                        <div class="feature-card group" data-reveal="fade-up" data-reveal-delay="300">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m6 4v4m-2-2h4M6 3a9 9 0 0112 0v12a9 9 0 01-12 0V3z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Kudrati Chamak</h3>
+                            <p class="text-gray-500 leading-relaxed text-sm">Rukhe aur bejaan baalon ko banaye silky,
+                                shiny
+                                aur manageable pehli wash se.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ingredients Section -->
+            <section id="ingredients" class="py-24 bg-gray-50 relative">
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16" data-reveal="fade-up">
+                        <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-2 block">Nature's
+                            Best</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Prakritik <span
+                                class="text-emerald-700">Jadi-Bootiyan</span></h2>
+                    </div>
+
+                    <div class="ingredient-grid">
+                        <div class="ingredient-card text-center group" data-reveal="scale-up">
+                            <div class="ingredient-ring">
+                                <div class="ingredient-image bg-white group-hover:scale-105 transition-transform">
+                                    <img src="assets/vecteezy_amla-png-transparent-background_29228880.png" alt="Amla">
+                                </div>
+                            </div>
+                            <h3 class="ingredient-name group-hover:text-emerald-700 transition-colors">Amla</h3>
+                            <p class="ingredient-benefit text-sm">Vitamin C se bharpoor, jodon ko majboot kare aur hair
+                                fall
+                                kam kare.</p>
+                        </div>
+                        <div class="ingredient-card text-center group" data-reveal="scale-up" data-reveal-delay="100">
+                            <div class="ingredient-ring">
+                                <div class="ingredient-image bg-white group-hover:scale-105 transition-transform">
+                                    <img src="assets/image.png" alt="Bhringraj">
+                                </div>
+                            </div>
+                            <h3 class="ingredient-name group-hover:text-emerald-700 transition-colors">Bhringraj</h3>
+                            <p class="ingredient-benefit text-sm">Scalp ko rejuvenate kare, naye baal ugane me madad
+                                kare
+                                aur shine badhaye.</p>
+                        </div>
+                        <div class="ingredient-card text-center group" data-reveal="scale-up" data-reveal-delay="200">
+                            <div class="ingredient-ring">
+                                <div class="ingredient-image bg-white group-hover:scale-105 transition-transform">
+                                    <img src="assets/s11728_neem_isolated_on_white_background_-stylize_200_e5717d1f-c632-491f-9ced-53cc98672ff0_1-photoroom-quvh75mxaupjbihl2wx2wzce59sbvr8o25ia2owexs.png"
+                                        alt="Neem">
+                                </div>
+                            </div>
+                            <h3 class="ingredient-name group-hover:text-emerald-700 transition-colors">Neem</h3>
+                            <p class="ingredient-benefit text-sm">Anti-fungal properties ke saath rusi dur kare aur
+                                scalp ko
+                                detoxify kare.</p>
+                        </div>
+                        <div class="ingredient-card text-center group" data-reveal="scale-up" data-reveal-delay="300">
+                            <div class="ingredient-ring">
+                                <div class="ingredient-image bg-white group-hover:scale-105 transition-transform">
+                                    <img src="assets/brahmi.png" alt="Brahmi">
+                                </div>
+                            </div>
+                            <h3 class="ingredient-name group-hover:text-emerald-700 transition-colors">Brahmi</h3>
+                            <p class="ingredient-benefit text-sm">Stress ko kam kare, blood circulation badhaye aur
+                                dandruff
+                                se bachaye.</p>
+                        </div>
+                        <div class="ingredient-card text-center group" data-reveal="scale-up" data-reveal-delay="400">
+                            <div class="ingredient-ring">
+                                <div class="ingredient-image bg-white group-hover:scale-105 transition-transform">
+                                    <img src="assets/coconut-oil-fall-from-coconut-on-transparent-background-free-png.png"
+                                        alt="Coconut Oil">
+                                </div>
+                            </div>
+                            <h3 class="ingredient-name group-hover:text-emerald-700 transition-colors">Nariyal Tel</h3>
+                            <p class="ingredient-benefit text-sm">Deep conditioning de, dryness door kare aur baalon ko
+                                silky banaye.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Use Section -->
+            <section id="how-to-use" class="py-24 bg-white relative">
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <div class="mb-16" data-reveal="fade-up">
+                        <span class="text-gold font-bold uppercase tracking-widest text-xs mb-2 block">Easy
+                            Routine</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Istemal Ka Sahi <span
+                                class="text-emerald-700">Tarika</span></h2>
+                        <div class="w-16 h-1 bg-emerald-200 mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12 relative">
+                        <!-- Connecting line for desktop -->
+                        <div
+                            class="hidden md:block absolute top-12 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-emerald-100 via-emerald-300 to-emerald-100 -z-10">
+                        </div>
+
+                        <!-- Step 1 -->
+                        <div class="relative w-full md:w-1/3 group" data-reveal="fade-up">
+                            <div
+                                class="bg-white border-4 border-emerald-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 z-10 relative">
+                                <span class="text-3xl font-bold text-emerald-600 font-display">1</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3 text-gray-800">Tel Lagayein</h3>
+                            <p class="text-gray-500 leading-relaxed px-4">Thoda sa tel lekar ungliyon se scalp par
+                                dheere-dheere 10-15 minute massage karein takay tel jadon tak puhanche.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative w-full md:w-1/3 group" data-reveal="fade-up" data-reveal-delay="100">
+                            <div
+                                class="bg-white border-4 border-emerald-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 z-10 relative">
+                                <span class="text-3xl font-bold text-emerald-600 font-display">2</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3 text-gray-800">Raat Bhar Chhodein</h3>
+                            <p class="text-gray-500 leading-relaxed px-4">Behtareen result ke liye, tel ko puri raat
+                                laga
+                                rehne dein taaki nutrients absorb ho sakein.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative w-full md:w-1/3 group" data-reveal="fade-up" data-reveal-delay="200">
+                            <div
+                                class="bg-white border-4 border-emerald-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 z-10 relative">
+                                <span class="text-3xl font-bold text-emerald-600 font-display">3</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-3 text-gray-800">Shampoo Karein</h3>
+                            <p class="text-gray-500 leading-relaxed px-4">Subah kisi mild / herbal shampoo se baalon ko
+                                dho
+                                lein. Conditioner ki zarurat nahi padegi.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Reviews Section -->
+            <section id="reviews" class="py-24 bg-warm relative">
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center mb-16" data-reveal="fade-up">
+                        <span class="text-emerald-600 font-bold uppercase tracking-widest text-xs mb-2 block">Real
+                            Stories</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Hamare Grahakon Ki <span
+                                class="text-emerald-700">Raye</span></h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Review 1 -->
+                        <div class="glass-card p-8 rounded-2xl relative" data-reveal="fade-up">
+                            <div
+                                class="absolute -top-4 -right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Verified</div>
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-xl mr-4">
+                                    R</div>
+                                <div>
+                                    <p class="font-bold text-gray-900">Ravi Kumar</p>
+                                    <div class="flex text-yellow-400 text-sm">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic leading-relaxed">"Mera hair fall 1 mahine mein hi kaafi kam
+                                ho
+                                gaya. Maine bohot products try kiye par yeh sabse best hai. Highly recommended!"</p>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="glass-card p-8 rounded-2xl relative" data-reveal="fade-up" data-reveal-delay="100">
+                            <div
+                                class="absolute -top-4 -right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Verified</div>
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold text-xl mr-4">
+                                    S</div>
+                                <div>
+                                    <p class="font-bold text-gray-900">Sunita Patel</p>
+                                    <div class="flex text-yellow-400 text-sm">★★★★★</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic leading-relaxed">"Is tel ki khushbu bahut acchi hai (bilkul
+                                herbal) aur isne mere baalon ko bohot soft bana diya hai. Dandruff bhi chala gaya."</p>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="glass-card p-8 rounded-2xl relative" data-reveal="fade-up" data-reveal-delay="200">
+                            <div
+                                class="absolute -top-4 -right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Verified</div>
+                            <div class="flex items-center mb-6">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xl mr-4">
+                                    A</div>
+                                <div>
+                                    <p class="font-bold text-gray-900">Amit Sharma</p>
+                                    <div class="flex text-yellow-400 text-sm">★★★★☆</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic leading-relaxed">"Packging bahut acchi thi. Delivery timely
+                                hui.
+                                Product asardaar hai, 2 hafte mein hi dandruff gayab ho gaya."</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini AI Hair Plan Section -->
+            <section id="hair-plan" class="py-24 bg-emerald-900 text-white relative overflow-hidden">
+                <!-- Abstract Shapes -->
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-emerald-800 rounded-full blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-800 rounded-full blur-3xl opacity-50 transform -translate-x-1/2 translate-y-1/2">
+                </div>
+
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <h2 class="text-4xl font-bold mb-4 font-display" data-reveal="fade-up">Personalized Hair Care Plan ✨
+                    </h2>
+                    <p class="text-emerald-200 text-lg mb-10 max-w-2xl mx-auto" data-reveal="fade-up"
+                        data-reveal-delay="100">Apni hair details batayein aur payein AI-powered expert routine jo sirf
+                        aapke liye bana hai.</p>
+
+                    <div class="bg-white text-gray-800 p-8 rounded-2xl shadow-2xl max-w-3xl mx-auto text-left relative overflow-hidden"
+                        data-reveal="fade-up" data-reveal-delay="150">
+                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-emerald-600">
+                        </div>
+
+                        <div id="hair-plan-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="hair-type"
+                                        class="block text-gray-700 font-bold mb-2 text-sm uppercase tracking-wide">Hair
+                                        Type</label>
+                                    <div class="relative">
+                                        <select id="hair-type"
+                                            class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 appearance-none text-gray-700 font-medium">
+                                            <option value="Oily (Teliya)">Oily (Teliya)</option>
+                                            <option value="Dry (Rukhe)">Dry (Rukhe)</option>
+                                            <option value="Normal (Samanya)">Normal (Samanya)</option>
+                                        </select>
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20">
+                                                <path
+                                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="hair-concern"
+                                        class="block text-gray-700 font-bold mb-2 text-sm uppercase tracking-wide">Main
+                                        Concern</label>
+                                    <div class="relative">
+                                        <select id="hair-concern"
+                                            class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 appearance-none text-gray-700 font-medium">
+                                            <option value="Hair Fall (Baalon ka girna)">Hair Fall (Baalon ka girna)
+                                            </option>
+                                            <option value="Dandruff (Rusi)">Dandruff (Rusi)</option>
+                                            <option value="Slow Growth (Dheemi growth)">Slow Growth (Dheemi growth)
+                                            </option>
+                                            <option value="Dullness (Bejaan baal)">Dullness (Bejaan baal)</option>
+                                        </select>
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20">
+                                                <path
+                                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="generate-plan-btn" onclick="generatePlan()"
+                                class="interactive-cta w-full py-4 rounded-xl font-bold text-lg shadow-lg flex items-center justify-center gap-2 group">
+                                <span>✨ Generate My Plan</span>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5 transform group-hover:rotate-12 transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div id="gemini-response-container" class="mt-8 transition-all duration-500 ease-in-out">
+                            <div id="loader" class="mx-auto hidden loader mb-4"></div>
+                            <div id="gemini-response"
+                                class="hidden bg-emerald-50 border border-emerald-100 p-6 rounded-xl text-left prose prose-emerald max-w-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buy Now Section -->
+            <section id="buy" class="py-24 bg-warm relative">
+                <div class="container mx-auto px-6 text-center">
+                    <div class="mb-16">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Order Karne Ka Aasan Tarika</h2>
+                        <p class="text-gray-500 text-lg">Secure Checkout • Fast Delivery • COD Available</p>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-3xl shadow-2xl max-w-5xl mx-auto overflow-hidden flex flex-col md:flex-row border border-gray-100">
+                        <!-- Left: Order Summary & QR -->
+                        <div
+                            class="md:w-5/12 bg-gray-50 p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col items-center text-center">
+                            <div class="mb-8 w-full">
+                                <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Order Summary
+                                </h3>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-gray-600 font-medium text-lg">Usmania Hair Oil</span>
+                                    <span class="text-gray-900 font-bold text-lg">₹999</span>
+                                </div>
+                                <div class="flex justify-between items-center mb-4 text-emerald-600">
+                                    <span class="font-medium">Special Discount</span>
+                                    <span class="font-bold">- ₹0</span>
+                                </div>
+                                <div class="border-t border-gray-200 my-4"></div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-900 font-bold text-xl">Total To Pay</span>
+                                    <span class="text-gray-900 font-bold text-2xl">₹999</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 w-full">
+                                <h4 class="font-bold text-gray-800 mb-2">Step 1: Advance Payment</h4>
+                                <p class="text-gray-500 text-sm mb-4">Confirm order ke liye <span
+                                        class="text-emerald-600 font-bold">₹99</span> pay karein.</p>
+
+                                <div class="relative group mx-auto w-48 h-48 mb-4">
+                                    <div
+                                        class="absolute inset-0 bg-emerald-500 rounded-lg blur opacity-20 group-hover:opacity-30 transition">
+                                    </div>
+                                    <img src="assets/qr_code.jpg" alt="QR Code"
+                                        class="relative w-full h-full rounded-lg mix-blend-multiply">
+                                </div>
+
+                                <p class="text-xs text-gray-400 mb-4 font-mono">UPI: 0952007159@ptyes</p>
+
+                                <button type="button" onclick="openUpiPayment()"
+                                    class="w-full bg-emerald-100 text-emerald-700 py-3 rounded-xl font-bold hover:bg-emerald-200 transition flex items-center justify-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                                        <path fill-rule="evenodd"
+                                            d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    Pay ₹99 via UPI
                                 </button>
                             </div>
                         </div>
-        
-                        <!-- Step 2: Send Details -->
-                        <div class="md:w-1/2 flex flex-col items-center mt-6 md:mt-0">
-                             <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                                <span class="bg-emerald-600 text-white rounded-full h-8 w-8 inline-flex items-center justify-center mr-2">2</span> 
-                                Details WhatsApp Karein
-                            </h3>
-                            <p class="text-center text-gray-600 mb-4">Payment ka screenshot aur apna address neeche diye format mein hamare WhatsApp number <strong class="text-emerald-600">9520007159</strong> par bhejein.</p>
-                            <div class="bg-gray-100 p-4 rounded-lg w-full text-gray-700 leading-relaxed mb-4 space-y-2">
-                                <div class="mb-2"><label for="name" class="font-semibold">Name:</label><input id="name" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="mobile" class="font-semibold">Mobile number:</label><input id="mobile" type="tel" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="quantity" class="font-semibold">Quantity:</label><input id="quantity" type="number" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="city" class="font-semibold">Vill-/City:</label><input id="city" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="pin" class="font-semibold">Pin code:</label><input id="pin" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="post" class="font-semibold">Post office:</label><input id="post" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
-                                <div class="mb-2"><label for="near" class="font-semibold">NEAR by Add:</label><input id="near" type="text" class="w-full p-2 border border-gray-300 rounded" required></div>
+
+                        <!-- Right: Shipping Details -->
+                        <div class="md:w-7/12 p-8 md:p-10 text-left bg-white">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div
+                                    class="bg-emerald-100 text-emerald-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">
+                                    2</div>
+                                <h3 class="text-xl font-bold text-gray-900">Shipping Details</h3>
                             </div>
-                             <a href="#buy" class="interactive-cta bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition duration-300 w-full animate-pulse mt-6 flex items-center justify-center" onclick="sendToWhatsApp(event)" data-reveal="fade-up" data-reveal-delay="250">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.654 4.388 1.846 6.166l-1.117 4.096 4.188-1.099z"/></svg>
-                                WhatsApp Par Bhejein
-                            </a>
+
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Full
+                                            Name</label>
+                                        <input id="name" type="text"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                                            placeholder="Enter your name">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Mobile
+                                            Number</label>
+                                        <input id="mobile" type="tel"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                                            placeholder="10-digit number">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Village /
+                                            City</label>
+                                        <input id="city" type="text"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                                            placeholder="Your city or village">
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-xs font-bold text-gray-500 uppercase mb-1">Quantity</label>
+                                        <input id="quantity" type="number" value="1" min="1"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition text-center">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Pin
+                                            Code</label>
+                                        <input id="pin" type="text"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                                            placeholder="6-digit PIN">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Post
+                                            Office</label>
+                                        <input id="post" type="text"
+                                            class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Nearby
+                                        Landmark</label>
+                                    <input id="near" type="text"
+                                        class="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                                        placeholder="Near Temple / School / Road">
+                                </div>
+
+                                <div class="pt-4">
+                                    <button onclick="sendToWhatsApp(event)"
+                                        class="interactive-cta w-full py-4 rounded-xl text-lg font-bold shadow-xl flex items-center justify-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.654 4.388 1.846 6.166l-1.117 4.096 4.188-1.099z" />
+                                        </svg>
+                                        Complete Order via WhatsApp
+                                    </button>
+                                    <p class="text-center text-xs text-gray-400 mt-3">You will be redirected to WhatsApp
+                                        to
+                                        send order details.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Product Video Section -->
-        <section id="video" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8" data-reveal="fade-up">Product <span class="text-emerald-600">Video</span></h2>
-                <div class="max-w-4xl mx-auto" data-reveal="fade-up" data-reveal-delay="100">
-                    <div class="relative w-full" style="padding-top: 56.25%;">
-                        <iframe
-                            id="product-video-frame"
-                            src="https://www.youtube.com/embed/jAZdQP0r_Gk"
-                            title="Usmania Hair Oil Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            loading="lazy"
-                            class="absolute inset-0 w-full h-full rounded-2xl shadow-2xl border-0 bg-black"
-                        ></iframe>
+            <!-- Product Video Section -->
+            <section id="video" class="py-24 bg-white relative">
+                <div class="absolute inset-0 bg-hero-pattern opacity-50 pointer-events-none"></div>
+                <div class="container mx-auto px-6 relative z-10">
+                    <div class="text-center mb-12" data-reveal="fade-up">
+                        <span class="text-gold font-bold uppercase tracking-widest text-xs mb-2 block">Watch &
+                            Learn</span>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Dekhein <span
+                                class="text-emerald-700">Asli Natije</span></h2>
+                        <div class="w-16 h-1 bg-emerald-200 mx-auto rounded-full"></div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto" data-reveal="fade-up" data-reveal-delay="100">
+                        <div class="relative w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
+                            <div
+                                class="absolute inset-0 bg-emerald-900/10 group-hover:bg-transparent transition duration-500 pointer-events-none z-10">
+                            </div>
+                            <div class="relative w-full" style="padding-top: 56.25%;">
+                                <iframe id="product-video-frame" src="https://www.youtube.com/embed/jAZdQP0r_Gk"
+                                    title="Usmania Hair Oil Video"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"
+                                    class="absolute inset-0 w-full h-full bg-black"></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Product Gallery Section -->
-        <section id="gallery" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12" data-reveal="fade-up">Product <span class="text-emerald-600">Gallery</span></h2>
-                <div class="flex justify-center">
-                    <div class="slider-container" data-reveal="fade-up" data-reveal-delay="100">
-                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.01_c9b92b35.jpg" class="slider-img active" alt="Usmania Hair Oil Bottle 1">
-                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.02_a3c3c661.jpg" class="slider-img" alt="Usmania Hair Oil Bottle 2">
-                        <img src="assets/WhatsApp Image 2025-09-22 at 22.47.00_2ddecde6.jpg" class="slider-img" alt="Usmania Hair Oil Bottle 3">
-                        <button class="slider-btn left" onclick="prevSlide()">◀</button>
-                        <button class="slider-btn right" onclick="nextSlide()">▶</button>
+            <!-- Product Gallery Section -->
+            <section id="gallery" class="py-24 bg-warm relative overflow-hidden">
+                <!-- Decorative blobs -->
+                <div
+                    class="absolute top-0 left-0 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob">
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 w-64 h-64 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000">
+                </div>
+
+                <div class="container mx-auto px-6 text-center relative z-10">
+                    <div class="mb-16" data-reveal="fade-up">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4 font-display">Product <span
+                                class="text-emerald-700">Gallery</span></h2>
+                        <p class="text-gray-500">Premium Packaging, Premium Results</p>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="slider-container bg-white p-4 rounded-2xl shadow-xl relative" data-reveal="fade-up"
+                            data-reveal-delay="100">
+                            <div class="rounded-xl overflow-hidden relative">
+                                <img src="assets/hero-premium.png"
+                                    class="slider-img active object-contain p-8 bg-gray-50"
+                                    alt="Usmania Hair Oil Premium">
+                                <img src="assets/real-shot-1.jpg" class="slider-img object-cover object-center"
+                                    alt="Usmania Hair Oil Real Shot 1">
+                                <img src="assets/real-shot-2.jpg" class="slider-img object-cover object-center"
+                                    alt="Usmania Hair Oil Real Shot 2">
+                            </div>
+
+                            <button
+                                class="slider-btn left bg-white/80 hover:bg-white text-emerald-800 shadow-md backdrop-blur-sm transition-all"
+                                onclick="prevSlide()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button
+                                class="slider-btn right bg-white/80 hover:bg-white text-emerald-800 shadow-md backdrop-blur-sm transition-all"
+                                onclick="nextSlide()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Dots -->
+                        <div class="flex justify-center mt-6 space-x-2">
+                            <button class="w-3 h-3 rounded-full bg-emerald-600 transition-all duration-300"
+                                onclick="goToSlide(0)"></button>
+                            <button
+                                class="w-3 h-3 rounded-full bg-emerald-200 hover:bg-emerald-400 transition-all duration-300"
+                                onclick="goToSlide(1)"></button>
+                            <button
+                                class="w-3 h-3 rounded-full bg-emerald-200 hover:bg-emerald-400 transition-all duration-300"
+                                onclick="goToSlide(2)"></button>
+                        </div>
                     </div>
                 </div>
+            </section>
+            </div>
+            </div>
             </div>
         </section>
 
     </main>
-    
+
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Usmania Hair Oil. All Rights Reserved.</p>
-            <p class="mt-2">Contact Us: <a href="mailto:contact.usmaniahairoil@gmail.com" class="text-emerald-400">contact.usmaniahairoil@gmail.com</a> | +91 9520007159</p>
+    <footer class="bg-emerald-950 text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
+                <!-- Brand -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl font-bold font-display text-gold mb-2">Usmania Hair Oil</h3>
+                    <p class="text-emerald-300 max-w-xs">100% Ayurvedic & Herbal Solution for all hair problems.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="flex gap-8 text-sm font-semibold text-emerald-100">
+                    <a href="#hero-bg" class="hover:text-gold transition">Home</a>
+                    <a href="#ingredients" class="hover:text-gold transition">Ingredients</a>
+                    <a href="#reviews" class="hover:text-gold transition">Reviews</a>
+                    <a href="#buy" class="hover:text-gold transition">Order Now</a>
+                </div>
+
+                <!-- Contact -->
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-emerald-400 font-bold uppercase tracking-wider mb-2">Contact Us</p>
+                    <a href="mailto:contact.usmaniahairoil@gmail.com"
+                        class="block text-white hover:text-gold transition mb-1">contact.usmaniahairoil@gmail.com</a>
+                    <p class="text-white font-mono">+91 9520007159</p>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-emerald-900 pt-8 text-center text-sm text-emerald-600 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Usmania Hair Oil. All Rights Reserved.</p>
+                <p class="mt-2 md:mt-0">Made with ❤️ for Healthy Hair</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

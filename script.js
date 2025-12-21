@@ -26,6 +26,11 @@ function prevSlide() {
     showSlide(currentSlide);
 }
 
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
 function startSliderAutoplay() {
     if (slides.length <= 1 || sliderInterval) return;
     sliderInterval = setInterval(() => {
@@ -37,6 +42,26 @@ function stopSliderAutoplay() {
     if (!sliderInterval) return;
     clearInterval(sliderInterval);
     sliderInterval = null;
+}
+
+// Product Showcase Gallery
+function changeShowcaseImage(thumbnail, src) {
+    const mainImg = document.getElementById('showcase-main-img');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+
+    // Update main image with fade effect
+    mainImg.style.opacity = '0.7';
+    setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1';
+    }, 150);
+
+    // Update active state
+    thumbnails.forEach(thumb => thumb.classList.remove('active', 'border-emerald-500'));
+    thumbnails.forEach(thumb => thumb.classList.add('border-transparent'));
+
+    thumbnail.classList.add('active', 'border-emerald-500');
+    thumbnail.classList.remove('border-transparent');
 }
 
 // Touch/Swipe Support for Mobile
@@ -401,26 +426,20 @@ function sendToWhatsApp(event) {
     window.location.href = whatsappUrl;
 }
 
-function shareUpiIntent() {
+// Make sure the function is globally accessible
+window.openUpiPayment = function () {
+    const transactionId = 'UHO' + Date.now(); // Unique transaction ID
+
     const upiParams = new URLSearchParams({
         pa: '0952007159@ptyes',
         pn: 'Usmania Hair Oil',
         tn: 'Usmania Hair Oil Advance Payment',
         am: '99',
         cu: 'INR',
+        tr: transactionId, // Transaction Reference ID
     });
 
     const upiUrl = `upi://pay?${upiParams.toString()}`;
 
-    if (navigator.share) {
-        navigator.share({
-            title: 'Usmania Hair Oil - Advance Payment',
-            text: '₹99 ka advance payment karne ke liye apna UPI app chunein:',
-            url: upiUrl,
-        }).catch(() => {
-            alert('Share option cancel hua ya open nahi hua. Kripya QR scan karein ya UPI ID manually use karein: 0952007159@ptyes');
-        });
-    } else {
-        alert('Aapke browser mein share option support nahi hai. Kripya QR scan karein ya UPI ID manually use karein: 0952007159@ptyes');
-    }
-}
+    window.location.href = upiUrl;
+};
