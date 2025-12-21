@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USMANIA | Luxury Ayurvedic Hair Oil</title>
+
+    <!-- Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind for Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Design System -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#0a0a0a',
+                        charcoal: '#1a1a1a',
+                        graphite: '#2d2d2d',
+                        slate: '#4a4a4a',
+                        stone: '#8a8a8a',
+                        ivory: '#f8f6f3',
+                        cream: '#faf9f7',
+                        champagne: '#c9a962',
+                        'champagne-light': '#d4b978',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Jost', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-cream text-noir smooth-scroll">
+
+    <!-- Navigation -->
+    <header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-500">
+        <nav class="container mx-auto px-8 py-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="Usmania" class="h-10 w-auto">
+                <span class="font-display text-xl tracking-widest uppercase hidden md:block">Usmania</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="#heritage" class="nav-link">Heritage</a>
+                <a href="#collection" class="nav-link">Collection</a>
+                <a href="#ingredients" class="nav-link">Ingredients</a>
+                <a href="#rituals" class="nav-link">Rituals</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="#acquire" class="btn-luxury text-xs py-3 px-6">
+                Acquire
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center relative pt-24">
+            <!-- Subtle Background Elements -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <!-- Text Content -->
+                    <div class="text-center lg:text-left" data-reveal="fade-right">
+                        <p class="uppercase-elegant text-champagne mb-6 tracking-[0.3em]">
+                            The Art of Ayurvedic Beauty
+                        </p>
+
+                        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-noir leading-[1.1] mb-8">
+                            Where Ancient<br>
+                            <span class="italic text-champagne">Wisdom</span> Meets<br>
+                            Modern Elegance
+                        </h1>
+
+                        <p class="text-stone text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10">
+                            A meticulously crafted elixir of rare Himalayan herbs, designed
+                            to restore your hair's natural vitality and timeless beauty.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#acquire" class="interactive-cta">
+                                <span>Discover the Elixir</span>
+                            </a>
+                            <a href="#heritage" class="btn-luxury">
+                                Our Heritage
+                            </a>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div
+                            class="mt-12 flex items-center justify-center lg:justify-start gap-8 text-xs uppercase tracking-widest text-stone">
+                            <span>100% Natural</span>
+                            <span class="w-1 h-1 bg-champagne rounded-full"></span>
+                            <span>Handcrafted</span>
+                            <span class="w-1 h-1 bg-champagne rounded-full"></span>
+                            <span>Since 2020</span>
+                        </div>
+                    </div>
+
+                    <!-- Product Image -->
+                    <div class="relative flex justify-center" data-reveal="fade-left">
+                        <!-- Decorative Ring -->
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-[400px] h-[400px] border border-champagne/20 rounded-full"></div>
+                            <div class="absolute w-[500px] h-[500px] border border-champagne/10 rounded-full"></div>
+                        </div>
+
+                        <!-- Main Product Image -->
+                        <img src="assets/real-shot-2.jpg" alt="Usmania Hair Oil"
+                            class="relative z-10 w-3/4 max-w-md floating rounded-sm shadow-luxury">
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute bottom-8 right-8 lg:right-16 bg-noir text-ivory p-6 z-20 hidden md:block floating-slow">
+                            <p class="uppercase-elegant text-champagne text-[10px] mb-1">Visible Results</p>
+                            <p class="font-display text-2xl">4 Weeks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-stone">Scroll</span>
+                <div class="w-px h-12 bg-gradient-to-b from-champagne to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- Heritage Section -->
+        <section id="heritage" class="py-32 bg-noir text-ivory relative overflow-hidden">
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <!-- Image -->
+                    <div class="relative" data-reveal="fade-right">
+                        <img src="assets/hero-premium.png" alt="Usmania Heritage" class="w-full max-w-lg mx-auto">
+                    </div>
+
+                    <!-- Content -->
+                    <div data-reveal="fade-left">
+                        <p class="uppercase-elegant text-champagne mb-6 tracking-[0.3em]">Our Heritage</p>
+                        <h2 class="font-display text-4xl md:text-5xl mb-8 leading-tight">
+                            A Legacy of<br>
+                            <span class="italic text-champagne">Purity</span>
+                        </h2>
+
+                        <div class="w-16 h-px bg-champagne mb-8"></div>
+
+                        <p class="text-ivory/70 text-lg leading-relaxed mb-8">
+                            Born from generations of Ayurvedic wisdom, USMANIA represents the pinnacle
+                            of natural hair care. Each bottle contains the essence of time-honored
+                            recipes, carefully preserved and refined for the modern connoisseur.
+                        </p>
+
+                        <p class="text-ivory/70 text-lg leading-relaxed mb-10">
+                            हमारे पुरखों की विरासत, आधुनिक शुद्धता के साथ।
+                            <span class="block mt-2 text-sm italic text-champagne">
+                                Our ancestors' legacy, with modern purity.
+                            </span>
+                        </p>
+
+                        <a href="#collection"
+                            class="btn-luxury-gold border-champagne text-champagne hover:bg-champagne hover:text-noir transition-all duration-500 inline-flex items-center gap-3 px-8 py-4 uppercase text-xs tracking-[0.2em] border">
+                            View Collection
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Element -->
+            <div class="absolute top-0 right-0 w-1/3 h-full opacity-5">
+                <div class="w-full h-full bg-gradient-to-l from-champagne to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- Collection / Product Showcase -->
+        <section id="collection" class="py-32 bg-cream">
+            <div class="container mx-auto px-8">
+                <!-- Header -->
+                <div class="text-center mb-20" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">The Collection</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        Our Signature <span class="italic">Elixir</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                    <!-- Gallery -->
+                    <div class="flex flex-col md:flex-row gap-4" data-reveal="fade-right">
+                        <!-- Thumbnails -->
+                        <div class="flex flex-row md:flex-col gap-4 order-2 md:order-1">
+                            <div class="thumbnail active cursor-pointer w-20 h-20 border overflow-hidden"
+                                onclick="changeShowcaseImage(this, 'assets/real-shot-2.jpg')">
+                                <img src="assets/real-shot-2.jpg" class="w-full h-full object-cover" alt="Product">
+                            </div>
+                            <div class="thumbnail cursor-pointer w-20 h-20 border overflow-hidden"
+                                onclick="changeShowcaseImage(this, 'assets/hero-premium.png')">
+                                <img src="assets/hero-premium.png" class="w-full h-full object-contain bg-cream p-2"
+                                    alt="Premium">
+                            </div>
+                            <div class="thumbnail cursor-pointer w-20 h-20 border overflow-hidden"
+                                onclick="changeShowcaseImage(this, 'assets/real-shot-1.jpg')">
+                                <img src="assets/real-shot-1.jpg" class="w-full h-full object-cover" alt="Product">
+                            </div>
+                        </div>
+
+                        <!-- Main Image -->
+                        <div
+                            class="bg-ivory/50 flex items-center justify-center p-12 h-[500px] flex-1 border border-noir/5 order-1 md:order-2">
+                            <img id="showcase-main-img" src="assets/real-shot-2.jpg" alt="Usmania Hair Oil"
+                                class="max-h-full max-w-full object-contain transition-opacity duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Details -->
+                    <div class="space-y-8" data-reveal="fade-left">
+                        <div>
+                            <p class="uppercase-elegant text-champagne mb-3 tracking-[0.2em]">Signature Formula</p>
+                            <h3 class="font-display text-3xl text-noir mb-4">
+                                USMANIA Anti-Hairfall Elixir
+                            </h3>
+                            <div class="flex items-center gap-4 mb-6">
+                                <span class="text-champagne tracking-wider">★★★★★</span>
+                                <span class="text-stone text-sm">10,000+ Patrons</span>
+                            </div>
+                            <p class="text-stone leading-relaxed">
+                                A potent blend of Amla, Bhringraj, and Neem—meticulously formulated
+                                to arrest hair fall, stimulate growth, and restore natural lustre.
+                                100% natural. No chemicals. No compromises.
+                            </p>
+                        </div>
+
+                        <!-- Pricing -->
+                        <div class="bg-noir text-ivory p-8 flex items-center justify-between">
+                            <div>
+                                <p class="uppercase-elegant text-champagne text-[10px] mb-2">Limited Edition</p>
+                                <div class="flex items-baseline gap-3">
+                                    <span class="font-display text-3xl">₹999</span>
+                                    <span class="text-stone line-through">₹1499</span>
+                                </div>
+                            </div>
+                            <span class="text-champagne text-sm uppercase tracking-widest">Save 30%</span>
+                        </div>
+
+                        <!-- Trust Points -->
+                        <div class="grid grid-cols-2 gap-6 py-6 border-t border-b border-noir/10">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-champagne"></span>
+                                <span class="text-sm text-stone">100% Natural Herbs</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-champagne"></span>
+                                <span class="text-sm text-stone">No Side Effects</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-champagne"></span>
+                                <span class="text-sm text-stone">Handcrafted Quality</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-2 h-2 bg-champagne"></span>
+                                <span class="text-sm text-stone">Cruelty Free</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <a href="#acquire" class="interactive-cta w-full justify-center">
+                            <span>Add to Collection</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="fayde" class="py-32 bg-ivory">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-20" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">The Benefits</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        Why <span class="italic">Usmania</span>?
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="grid-benefits max-w-5xl mx-auto">
+                    <!-- Benefit 1 -->
+                    <div class="feature-card text-center group" data-reveal="fade-up">
+                        <div class="w-12 h-px bg-champagne mx-auto mb-8 group-hover:w-20 transition-all duration-500">
+                        </div>
+                        <h3 class="font-display text-xl mb-4 text-noir">Arrests Hair Fall</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Strengthens roots and reduces hair fall by up to 90% within the first 2 weeks.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="feature-card text-center group" data-reveal="fade-up">
+                        <div class="w-12 h-px bg-champagne mx-auto mb-8 group-hover:w-20 transition-all duration-500">
+                        </div>
+                        <h3 class="font-display text-xl mb-4 text-noir">Eliminates Dandruff</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Powerful anti-fungal properties cleanse the scalp and prevent recurrence.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="feature-card text-center group" data-reveal="fade-up">
+                        <div class="w-12 h-px bg-champagne mx-auto mb-8 group-hover:w-20 transition-all duration-500">
+                        </div>
+                        <h3 class="font-display text-xl mb-4 text-noir">Promotes Growth</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Enhances scalp circulation for 3x faster new hair growth.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="feature-card text-center group" data-reveal="fade-up">
+                        <div class="w-12 h-px bg-champagne mx-auto mb-8 group-hover:w-20 transition-all duration-500">
+                        </div>
+                        <h3 class="font-display text-xl mb-4 text-noir">Restores Shine</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Transforms dull hair into silky, lustrous locks from the very first wash.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Section -->
+        <section id="ingredients" class="py-32 bg-noir text-ivory">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-20" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">The Ingredients</p>
+                    <h2 class="font-display text-4xl md:text-5xl mb-6">
+                        Sacred <span class="italic">Botanicals</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="ingredient-grid max-w-5xl mx-auto">
+                    <div class="ingredient-card bg-charcoal text-center group" data-reveal="scale-up">
+                        <div class="ingredient-ring border-champagne/30 bg-graphite mx-auto">
+                            <div class="ingredient-image">
+                                <img src="assets/vecteezy_amla-png-transparent-background_29228880.png" alt="Amla">
+                            </div>
+                        </div>
+                        <h3 class="ingredient-name text-ivory group-hover:text-champagne">Amla</h3>
+                        <p class="ingredient-benefit text-ivory/60">Vitamin C powerhouse for strength</p>
+                    </div>
+
+                    <div class="ingredient-card bg-charcoal text-center group" data-reveal="scale-up">
+                        <div class="ingredient-ring border-champagne/30 bg-graphite mx-auto">
+                            <div class="ingredient-image">
+                                <img src="assets/image.png" alt="Bhringraj">
+                            </div>
+                        </div>
+                        <h3 class="ingredient-name text-ivory group-hover:text-champagne">Bhringraj</h3>
+                        <p class="ingredient-benefit text-ivory/60">King of herbs for growth</p>
+                    </div>
+
+                    <div class="ingredient-card bg-charcoal text-center group" data-reveal="scale-up">
+                        <div class="ingredient-ring border-champagne/30 bg-graphite mx-auto">
+                            <div class="ingredient-image">
+                                <img src="assets/s11728_neem_isolated_on_white_background_-stylize_200_e5717d1f-c632-491f-9ced-53cc98672ff0_1-photoroom-quvh75mxaupjbihl2wx2wzce59sbvr8o25ia2owexs.png"
+                                    alt="Neem">
+                            </div>
+                        </div>
+                        <h3 class="ingredient-name text-ivory group-hover:text-champagne">Neem</h3>
+                        <p class="ingredient-benefit text-ivory/60">Nature's purifier for scalp</p>
+                    </div>
+
+                    <div class="ingredient-card bg-charcoal text-center group" data-reveal="scale-up">
+                        <div class="ingredient-ring border-champagne/30 bg-graphite mx-auto">
+                            <div class="ingredient-image">
+                                <img src="assets/brahmi.png" alt="Brahmi">
+                            </div>
+                        </div>
+                        <h3 class="ingredient-name text-ivory group-hover:text-champagne">Brahmi</h3>
+                        <p class="ingredient-benefit text-ivory/60">Calms stress, boosts circulation</p>
+                    </div>
+
+                    <div class="ingredient-card bg-charcoal text-center group" data-reveal="scale-up">
+                        <div class="ingredient-ring border-champagne/30 bg-graphite mx-auto">
+                            <div class="ingredient-image">
+                                <img src="assets/coconut-oil-fall-from-coconut-on-transparent-background-free-png.png"
+                                    alt="Coconut">
+                            </div>
+                        </div>
+                        <h3 class="ingredient-name text-ivory group-hover:text-champagne">Nariyal</h3>
+                        <p class="ingredient-benefit text-ivory/60">Deep conditioning & shine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rituals / How to Use -->
+        <section id="rituals" class="py-32 bg-cream">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-20" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">The Ritual</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        Your <span class="italic">Journey</span> to Radiance
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="text-center" data-reveal="fade-up">
+                        <div class="font-display text-6xl text-champagne/30 mb-4">01</div>
+                        <h3 class="font-display text-xl text-noir mb-4">Apply</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Warm the elixir gently. Massage into scalp with
+                            fingertips for 10-15 minutes, allowing oils to penetrate.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center" data-reveal="fade-up">
+                        <div class="font-display text-6xl text-champagne/30 mb-4">02</div>
+                        <h3 class="font-display text-xl text-noir mb-4">Rest</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Leave overnight for optimal absorption. The herbs
+                            work while you sleep, nourishing from root to tip.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center" data-reveal="fade-up">
+                        <div class="font-display text-6xl text-champagne/30 mb-4">03</div>
+                        <h3 class="font-display text-xl text-noir mb-4">Reveal</h3>
+                        <p class="text-stone text-sm leading-relaxed">
+                            Cleanse with a gentle shampoo. No conditioner needed—
+                            witness the transformation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-32 bg-ivory">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-20" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">Testimonials</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        Voices of <span class="italic">Satisfaction</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Review 1 -->
+                    <div class="bg-pearl p-10 border border-noir/5" data-reveal="fade-up">
+                        <span class="quote-mark font-display">"</span>
+                        <p class="text-stone leading-relaxed mb-6 -mt-6">
+                            My hair fall reduced dramatically within a month. I've tried countless
+                            products—this is the only one that delivered real results.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-noir text-ivory flex items-center justify-center font-display">R
+                            </div>
+                            <div>
+                                <p class="text-noir font-medium text-sm">Ravi Kumar</p>
+                                <p class="text-champagne text-xs tracking-wider">★★★★★</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-pearl p-10 border border-noir/5" data-reveal="fade-up">
+                        <span class="quote-mark font-display">"</span>
+                        <p class="text-stone leading-relaxed mb-6 -mt-6">
+                            The fragrance is divine—pure herbal essence. My hair feels incredibly
+                            soft and the dandruff has completely disappeared.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-noir text-ivory flex items-center justify-center font-display">S
+                            </div>
+                            <div>
+                                <p class="text-noir font-medium text-sm">Sunita Patel</p>
+                                <p class="text-champagne text-xs tracking-wider">★★★★★</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-pearl p-10 border border-noir/5" data-reveal="fade-up">
+                        <span class="quote-mark font-display">"</span>
+                        <p class="text-stone leading-relaxed mb-6 -mt-6">
+                            Exquisite packaging, timely delivery, and most importantly—it works.
+                            Two weeks in, and my dandruff is history.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-noir text-ivory flex items-center justify-center font-display">A
+                            </div>
+                            <div>
+                                <p class="text-noir font-medium text-sm">Amit Sharma</p>
+                                <p class="text-champagne text-xs tracking-wider">★★★★☆</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Hair Plan Section -->
+        <section id="hair-plan" class="py-32 bg-noir text-ivory relative overflow-hidden">
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="text-center mb-16" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">Personalized Care</p>
+                    <h2 class="font-display text-4xl md:text-5xl mb-6">
+                        Your Bespoke <span class="italic">Hair Plan</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="max-w-2xl mx-auto" data-reveal="fade-up">
+                    <div class="bg-charcoal p-10 border border-ivory/10">
+                        <div id="hair-plan-form" class="space-y-8">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <label
+                                        class="uppercase-elegant text-champagne text-[10px] tracking-[0.2em] mb-3 block">Hair
+                                        Type</label>
+                                    <select id="hair-type"
+                                        class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory focus:outline-none focus:border-champagne transition-colors appearance-none cursor-pointer">
+                                        <option value="Oily (Teliya)" class="text-noir">Oily (Teliya)</option>
+                                        <option value="Dry (Rukhe)" class="text-noir">Dry (Rukhe)</option>
+                                        <option value="Normal (Samanya)" class="text-noir">Normal (Samanya)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label
+                                        class="uppercase-elegant text-champagne text-[10px] tracking-[0.2em] mb-3 block">Primary
+                                        Concern</label>
+                                    <select id="hair-concern"
+                                        class="w-full bg-transparent border-b border-ivory/30 py-3 text-ivory focus:outline-none focus:border-champagne transition-colors appearance-none cursor-pointer">
+                                        <option value="Hair Fall (Baalon ka girna)" class="text-noir">Hair Fall</option>
+                                        <option value="Dandruff (Rusi)" class="text-noir">Dandruff</option>
+                                        <option value="Slow Growth (Dheemi growth)" class="text-noir">Slow Growth
+                                        </option>
+                                        <option value="Dullness (Bejaan baal)" class="text-noir">Dullness</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button id="generate-plan-btn" onclick="generatePlan()"
+                                class="interactive-cta w-full justify-center group">
+                                <span>Generate My Plan</span>
+                            </button>
+                        </div>
+
+                        <div id="gemini-response-container" class="mt-8">
+                            <div id="loader" class="loader mx-auto hidden"></div>
+                            <div id="gemini-response"
+                                class="hidden bg-graphite border border-ivory/10 p-8 text-ivory/80 leading-relaxed whitespace-pre-wrap">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acquire / Order Section -->
+        <section id="acquire" class="py-32 bg-cream">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-16" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">Acquire</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        Begin Your <span class="italic">Transformation</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-5 gap-8" data-reveal="fade-up">
+                    <!-- Order Summary -->
+                    <div class="md:col-span-2 bg-noir text-ivory p-10">
+                        <p class="uppercase-elegant text-champagne text-[10px] mb-8 tracking-[0.2em]">Order Summary</p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between">
+                                <span class="text-ivory/70">USMANIA Elixir</span>
+                                <span>₹999</span>
+                            </div>
+                            <div class="flex justify-between text-champagne">
+                                <span>Savings</span>
+                                <span>-₹500</span>
+                            </div>
+                            <div class="border-t border-ivory/20 pt-4 flex justify-between text-lg">
+                                <span>Total</span>
+                                <span class="font-display text-2xl">₹999</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-ivory/20 pt-8">
+                            <p class="uppercase-elegant text-champagne text-[10px] mb-4">Step 1: Confirm with ₹99</p>
+                            <div class="bg-ivory/10 p-4 flex justify-center mb-4">
+                                <img src="assets/qr_code.jpg" alt="Payment QR" class="w-32 h-32 object-contain">
+                            </div>
+                            <p class="text-ivory/50 text-xs text-center font-mono">UPI: 0952007159@ptyes</p>
+                            <button type="button" onclick="openUpiPayment()"
+                                class="w-full mt-4 py-3 border border-champagne text-champagne uppercase text-xs tracking-widest hover:bg-champagne hover:text-noir transition-all">
+                                Pay ₹99 via UPI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Form -->
+                    <div class="md:col-span-3 bg-pearl p-10 border border-noir/5">
+                        <p class="uppercase-elegant text-champagne text-[10px] mb-8 tracking-[0.2em]">Step 2: Shipping
+                            Details</p>
+
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-xs text-stone uppercase tracking-wider mb-2 block">Full
+                                        Name</label>
+                                    <input id="name" type="text" class="input-luxury" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-stone uppercase tracking-wider mb-2 block">Mobile</label>
+                                    <input id="mobile" type="tel" class="input-luxury" placeholder="10-digit number">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="md:col-span-2">
+                                    <label class="text-xs text-stone uppercase tracking-wider mb-2 block">City /
+                                        Village</label>
+                                    <input id="city" type="text" class="input-luxury" placeholder="Your city">
+                                </div>
+                                <div>
+                                    <label
+                                        class="text-xs text-stone uppercase tracking-wider mb-2 block">Quantity</label>
+                                    <input id="quantity" type="number" value="1" min="1"
+                                        class="input-luxury text-center">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-xs text-stone uppercase tracking-wider mb-2 block">Pin
+                                        Code</label>
+                                    <input id="pin" type="text" class="input-luxury" placeholder="6-digit PIN">
+                                </div>
+                                <div>
+                                    <label class="text-xs text-stone uppercase tracking-wider mb-2 block">Post
+                                        Office</label>
+                                    <input id="post" type="text" class="input-luxury" placeholder="Post office">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-xs text-stone uppercase tracking-wider mb-2 block">Nearby
+                                    Landmark</label>
+                                <input id="near" type="text" class="input-luxury"
+                                    placeholder="Near temple, school, etc.">
+                            </div>
+
+                            <button onclick="sendToWhatsApp(event)" class="interactive-cta w-full justify-center mt-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.654 4.388 1.846 6.166l-1.117 4.096 4.188-1.099z" />
+                                </svg>
+                                <span>Complete Order via WhatsApp</span>
+                            </button>
+
+                            <p class="text-center text-xs text-stone">
+                                Free Shipping • Cash on Delivery Available
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video" class="py-32 bg-noir">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-16" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">Experience</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-ivory mb-6">
+                        See the <span class="italic">Transformation</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto" data-reveal="fade-up">
+                    <div class="relative border border-ivory/10" style="padding-top: 56.25%;">
+                        <iframe id="product-video-frame" src="https://www.youtube.com/embed/jAZdQP0r_Gk"
+                            title="Usmania Hair Oil"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy" class="absolute inset-0 w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="py-32 bg-cream">
+            <div class="container mx-auto px-8">
+                <div class="text-center mb-16" data-reveal="fade-up">
+                    <p class="uppercase-elegant text-champagne mb-4 tracking-[0.3em]">Gallery</p>
+                    <h2 class="font-display text-4xl md:text-5xl text-noir mb-6">
+                        The <span class="italic">Collection</span>
+                    </h2>
+                    <div class="divider-gold"></div>
+                </div>
+
+                <div class="flex justify-center" data-reveal="fade-up">
+                    <div class="slider-container border border-noir/5">
+                        <img src="assets/hero-premium.png" class="slider-img active object-contain p-8 bg-cream"
+                            alt="Premium">
+                        <img src="assets/real-shot-1.jpg" class="slider-img object-cover" alt="Product Shot 1">
+                        <img src="assets/real-shot-2.jpg" class="slider-img object-cover" alt="Product Shot 2">
+
+                        <button class="slider-btn left" onclick="prevSlide()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button class="slider-btn right" onclick="nextSlide()">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Slide Indicators -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button onclick="goToSlide(0)" class="w-8 h-px bg-champagne hover:w-12 transition-all"></button>
+                    <button onclick="goToSlide(1)"
+                        class="w-8 h-px bg-noir/30 hover:bg-champagne transition-all"></button>
+                    <button onclick="goToSlide(2)"
+                        class="w-8 h-px bg-noir/30 hover:bg-champagne transition-all"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-noir text-ivory py-20">
+        <div class="container mx-auto px-8">
+            <div class="grid md:grid-cols-3 gap-16 mb-16">
+                <!-- Brand -->
+                <div>
+                    <h3 class="font-display text-2xl tracking-wider mb-4">USMANIA</h3>
+                    <p class="text-ivory/50 text-sm leading-relaxed">
+                        100% Ayurvedic hair elixir, handcrafted with rare Himalayan herbs
+                        for the discerning patron.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex flex-col gap-4">
+                    <p class="uppercase-elegant text-champagne text-[10px] tracking-[0.2em] mb-2">Navigate</p>
+                    <a href="#heritage"
+                        class="text-ivory/70 hover:text-champagne transition-colors text-sm">Heritage</a>
+                    <a href="#collection"
+                        class="text-ivory/70 hover:text-champagne transition-colors text-sm">Collection</a>
+                    <a href="#ingredients"
+                        class="text-ivory/70 hover:text-champagne transition-colors text-sm">Ingredients</a>
+                    <a href="#acquire" class="text-ivory/70 hover:text-champagne transition-colors text-sm">Acquire</a>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <p class="uppercase-elegant text-champagne text-[10px] tracking-[0.2em] mb-4">Contact</p>
+                    <a href="mailto:contact.usmaniahairoil@gmail.com"
+                        class="block text-ivory/70 hover:text-champagne transition-colors text-sm mb-2">
+                        contact.usmaniahairoil@gmail.com
+                    </a>
+                    <p class="text-ivory/70 text-sm font-mono">+91 9520007159</p>
+                </div>
+            </div>
+
+            <div class="border-t border-ivory/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-ivory/30 text-xs">© 2025 USMANIA. All Rights Reserved.</p>
+                <p class="text-ivory/30 text-xs">Crafted with devotion for timeless beauty.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,805 @@
+/* =================================================================
+   USMANIA HAIR OIL - LUXURY BRAND DESIGN SYSTEM
+   Inspired by European luxury houses: LV, Prada, La Mer
+   ================================================================= */
+
+/* --- Luxury Color Palette --- */
+:root {
+    /* Primary Palette - Noir & Ivory */
+    --noir: #0a0a0a;
+    --charcoal: #1a1a1a;
+    --graphite: #2d2d2d;
+    --slate: #4a4a4a;
+    --stone: #8a8a8a;
+    --ivory: #f8f6f3;
+    --cream: #faf9f7;
+    --pearl: #ffffff;
+
+    /* Accent - Champagne Gold */
+    --champagne: #c9a962;
+    --champagne-light: #d4b978;
+    --champagne-dark: #a68b4b;
+
+    /* Legacy support */
+    --gold: var(--champagne);
+    --gold-light: var(--champagne-light);
+
+    /* Backgrounds */
+    --bg-dark: var(--noir);
+    --bg-light: var(--cream);
+
+    /* Typography */
+    --text-dark: var(--noir);
+    --text-light: var(--ivory);
+    --text-muted: var(--stone);
+
+    /* Effects */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+    /* Transitions */
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-slow: 0.8s;
+    --duration-medium: 0.5s;
+    --duration-fast: 0.3s;
+}
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Jost', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: var(--champagne);
+    color: var(--noir);
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.font-display {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+}
+
+.font-sans {
+    font-family: 'Jost', sans-serif;
+}
+
+.uppercase-elegant {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+/* --- Brand Title --- */
+.brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--noir);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* --- Navigation --- */
+.nav-luxury {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: all var(--duration-medium) var(--ease-luxury);
+    background: transparent;
+}
+
+.nav-luxury.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    position: relative;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--slate);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color var(--duration-fast) ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--champagne);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--duration-medium) var(--ease-luxury);
+}
+
+.nav-link:hover {
+    color: var(--noir);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* --- Buttons --- */
+.btn-luxury {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--noir);
+    background: transparent;
+    color: var(--noir);
+    cursor: pointer;
+    transition: all var(--duration-medium) var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-luxury::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--noir);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--duration-medium) var(--ease-luxury);
+    z-index: -1;
+}
+
+.btn-luxury:hover {
+    color: var(--pearl);
+    border-color: var(--noir);
+}
+
+.btn-luxury:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-luxury-gold {
+    border-color: var(--champagne);
+    color: var(--champagne);
+}
+
+.btn-luxury-gold::before {
+    background: var(--champagne);
+}
+
+.btn-luxury-gold:hover {
+    color: var(--noir);
+}
+
+.btn-luxury-filled {
+    background: var(--noir);
+    color: var(--pearl);
+    border-color: var(--noir);
+}
+
+.btn-luxury-filled::before {
+    background: var(--champagne);
+}
+
+.btn-luxury-filled:hover {
+    border-color: var(--champagne);
+}
+
+/* Interactive CTA (Legacy Support with Luxury Styling) */
+.interactive-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 1.25rem 3rem;
+    background: var(--noir);
+    color: var(--pearl);
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-medium) var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--champagne);
+    transform: translateY(100%);
+    transition: transform var(--duration-medium) var(--ease-luxury);
+    z-index: 0;
+}
+
+.interactive-cta span,
+.interactive-cta svg {
+    position: relative;
+    z-index: 1;
+}
+
+.interactive-cta:hover {
+    color: var(--noir);
+}
+
+.interactive-cta:hover::before {
+    transform: translateY(0);
+}
+
+/* --- Hero Section --- */
+.hero-luxury {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: var(--cream);
+    overflow: hidden;
+}
+
+.hero-bg {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--ivory) 50%, rgba(201, 169, 98, 0.03) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract luxury blobs */
+.blob {
+    position: absolute;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.blob-1 {
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: rgba(201, 169, 98, 0.15);
+    animation: blobFloat 25s ease-in-out infinite;
+}
+
+.blob-2 {
+    bottom: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(201, 169, 98, 0.1);
+    animation: blobFloat 20s ease-in-out infinite reverse;
+}
+
+@keyframes blobFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+/* Floating Animation */
+.floating {
+    animation: elegantFloat 6s ease-in-out infinite;
+}
+
+.floating-slow {
+    animation: elegantFloat 8s ease-in-out infinite reverse;
+}
+
+@keyframes elegantFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* --- Cards --- */
+.card-luxury {
+    background: var(--pearl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 3rem;
+    transition: all var(--duration-medium) var(--ease-luxury);
+}
+
+.card-luxury:hover {
+    border-color: var(--champagne);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.feature-card {
+    background: var(--pearl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    padding: 2.5rem;
+    transition: all var(--duration-medium) var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--champagne), var(--champagne-light));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-medium) var(--ease-luxury);
+}
+
+.feature-card:hover {
+    border-color: rgba(201, 169, 98, 0.3);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- Ingredients --- */
+.ingredient-card {
+    background: var(--pearl);
+    padding: 2.5rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--duration-medium) var(--ease-luxury);
+}
+
+.ingredient-card:hover {
+    border-color: var(--champagne);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.ingredient-ring {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    border: 1px solid rgba(201, 169, 98, 0.3);
+}
+
+.ingredient-ring::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border: 1px solid rgba(201, 169, 98, 0.2);
+    border-radius: 50%;
+    animation: ringPulse 3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.ingredient-image {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform var(--duration-medium) var(--ease-luxury);
+}
+
+.ingredient-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.ingredient-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--noir);
+    margin-bottom: 0.5rem;
+    transition: color var(--duration-fast) ease;
+}
+
+.ingredient-benefit {
+    color: var(--stone);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* --- Slider --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    overflow: hidden;
+    background: var(--cream);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.slider-img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--duration-slow) var(--ease-luxury);
+}
+
+.slider-img.active {
+    display: block;
+    animation: fadeIn var(--duration-slow) var(--ease-luxury);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--pearl);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--noir);
+    cursor: pointer;
+    transition: all var(--duration-fast) ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: var(--noir);
+    color: var(--pearl);
+    border-color: var(--noir);
+}
+
+.slider-btn.left {
+    left: 1rem;
+}
+
+.slider-btn.right {
+    right: 1rem;
+}
+
+/* --- Grid Systems --- */
+.grid-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.ingredient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Reveal Animations --- */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s var(--ease-luxury), transform 1s var(--ease-luxury);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-reveal="fade-left"] {
+    transform: translateX(-40px);
+}
+
+[data-reveal="fade-left"].is-visible {
+    transform: translateX(0);
+}
+
+[data-reveal="fade-right"] {
+    transform: translateX(40px);
+}
+
+[data-reveal="fade-right"].is-visible {
+    transform: translateX(0);
+}
+
+[data-reveal="scale-up"] {
+    transform: scale(0.95);
+}
+
+[data-reveal="scale-up"].is-visible {
+    transform: scale(1);
+}
+
+/* --- Section Backgrounds --- */
+.bg-warm {
+    background: var(--cream);
+}
+
+.bg-noir {
+    background: var(--noir);
+    color: var(--ivory);
+}
+
+.bg-charcoal {
+    background: var(--charcoal);
+    color: var(--ivory);
+}
+
+/* --- Text Utilities --- */
+.text-gold,
+.text-champagne {
+    color: var(--champagne);
+}
+
+.text-ivory {
+    color: var(--ivory);
+}
+
+.text-muted {
+    color: var(--stone);
+}
+
+/* --- Loader --- */
+.loader {
+    border: 2px solid rgba(201, 169, 98, 0.2);
+    border-top: 2px solid var(--champagne);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Thumbnail Gallery --- */
+.thumbnail {
+    transition: all var(--duration-fast) ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail.active {
+    border-color: var(--champagne);
+}
+
+.thumbnail:hover {
+    border-color: rgba(201, 169, 98, 0.5);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- Dark Sections --- */
+.section-dark {
+    background: var(--noir);
+    color: var(--ivory);
+}
+
+.section-dark h2,
+.section-dark h3 {
+    color: var(--ivory);
+}
+
+.section-dark .text-muted {
+    color: rgba(248, 246, 243, 0.6);
+}
+
+/* --- Form Inputs (Luxury Style) --- */
+.input-luxury {
+    width: 100%;
+    padding: 1rem 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--noir);
+    transition: border-color var(--duration-fast) ease;
+}
+
+.input-luxury:focus {
+    outline: none;
+    border-bottom-color: var(--champagne);
+}
+
+.input-luxury::placeholder {
+    color: var(--stone);
+}
+
+/* --- Dividers --- */
+.divider-gold {
+    width: 60px;
+    height: 1px;
+    background: var(--champagne);
+    margin: 0 auto;
+}
+
+/* --- Quote Styling --- */
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--champagne);
+    opacity: 0.5;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .hero-luxury {
+        min-height: auto;
+        padding: 6rem 0 4rem;
+    }
+
+    .slider-container {
+        height: 350px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .btn-luxury,
+    .interactive-cta {
+        padding: 1rem 2rem;
+        font-size: 0.75rem;
+    }
+
+    .feature-card,
+    .ingredient-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Smooth Scroll --- */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* --- Hero Pattern (Subtle) --- */
+.bg-hero-pattern {
+    background-image: none;
+}
+
+/* --- Animation Utilities --- */
+.animate-blob {
+    animation: blobFloat 10s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* --- Legacy Class Support --- */
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-gold {
+    background-color: var(--champagne);
+}
