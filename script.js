@@ -369,23 +369,75 @@ function generatePlan() {
     // Show loader and hide previous response
     loader.classList.remove('hidden');
     geminiResponseDiv.classList.add('hidden');
-    geminiResponseDiv.textContent = '';
+    geminiResponseDiv.innerHTML = ''; // Clear structured content
     generatePlanBtn.disabled = true;
     generatePlanBtn.textContent = 'Aapka plan taiyar ho raha hai...';
 
-    // Get plan immediately
-    const plan = hairPlans[hairType]?.[hairConcern];
-    if (plan) {
-        geminiResponseDiv.textContent = plan;
-    } else {
-        geminiResponseDiv.textContent = 'Maaf kijiye, aapke liye plan nahi mila. Kripya contact karein.';
-    }
+    // Simulate slight delay for "AI" feel (optional, can be removed if instant is preferred)
+    setTimeout(() => {
+        const planText = hairPlans[hairType]?.[hairConcern];
 
-    // Hide loader and show response
-    loader.classList.add('hidden');
-    geminiResponseDiv.classList.remove('hidden');
-    generatePlanBtn.disabled = false;
-    generatePlanBtn.innerHTML = '✨ Mera Plan Banayein';
+        if (planText) {
+            // Format the plain text into HTML
+            let formattedHtml = '<div class="space-y-4">';
+
+            const lines = planText.split('\n');
+            let inList = false;
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+
+                if (line.includes('Weekly Plan:')) {
+                    formattedHtml += `<h3 class="text-xl font-bold text-emerald-800 mb-2 border-b border-emerald-200 pb-2">${line}</h3>`;
+                }
+                else if (line.startsWith('-')) {
+                    if (!inList) {
+                        formattedHtml += '<ul class="list-disc pl-5 space-y-1 text-gray-700">';
+                        inList = true;
+                    }
+                    formattedHtml += `<li>${line.substring(1).trim()}</li>`;
+                }
+                else if (line.includes('Tip:')) {
+                    if (inList) {
+                        formattedHtml += '</ul>';
+                        inList = false;
+                    }
+                    const [label, content] = line.split(':');
+                    formattedHtml += `<div class="bg-emerald-100/50 p-3 rounded-lg border-l-4 border-emerald-500">
+                        <span class="font-bold text-emerald-800">${label}:</span> <span class="text-gray-700">${content}</span>
+                    </div>`;
+                }
+                else {
+                    if (inList) {
+                        formattedHtml += '</ul>';
+                        inList = false;
+                    }
+                    // Handle "Usmania Oil ka istemal" or other paragraphs
+                    if (line.includes('Usmania Oil ka istemal')) {
+                        const [label, content] = line.split(':');
+                        formattedHtml += `<p class="font-medium text-gray-800"><span class="font-bold text-emerald-700">${label}:</span> ${content}</p>`;
+                    } else {
+                        formattedHtml += `<p class="text-gray-700">${line}</p>`;
+                    }
+                }
+            });
+
+            if (inList) formattedHtml += '</ul>';
+            formattedHtml += '</div>';
+
+            geminiResponseDiv.innerHTML = formattedHtml;
+        } else {
+            geminiResponseDiv.innerHTML = '<p class="text-red-500 font-medium">Maaf kijiye, aapke liye plan nahi mila. Kripya contact karein.</p>';
+        }
+
+        // Hide loader and show response
+        loader.classList.add('hidden');
+        geminiResponseDiv.classList.remove('hidden');
+        generatePlanBtn.disabled = false;
+        generatePlanBtn.innerHTML = '✨ Mera Plan Banayein';
+
+    }, 800); // 800ms delay for better UX
 }
 
 function sendToWhatsApp(event) {
