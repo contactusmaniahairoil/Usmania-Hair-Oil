@@ -389,11 +389,11 @@ function generatePlan() {
                 if (!line) return;
 
                 if (line.includes('Weekly Plan:')) {
-                    formattedHtml += `<h3 class="text-xl font-bold text-emerald-800 mb-2 border-b border-emerald-200 pb-2">${line}</h3>`;
+                    formattedHtml += `<h3 class="text-lg md:text-xl font-bold text-emerald-800 mb-2 border-b border-emerald-200 pb-2">${line}</h3>`;
                 }
                 else if (line.startsWith('-')) {
                     if (!inList) {
-                        formattedHtml += '<ul class="list-disc pl-5 space-y-1 text-gray-700">';
+                        formattedHtml += '<ul class="list-disc pl-4 md:pl-5 space-y-1 text-gray-700 text-sm md:text-base">';
                         inList = true;
                     }
                     formattedHtml += `<li>${line.substring(1).trim()}</li>`;
@@ -404,7 +404,7 @@ function generatePlan() {
                         inList = false;
                     }
                     const [label, content] = line.split(':');
-                    formattedHtml += `<div class="bg-emerald-100/50 p-3 rounded-lg border-l-4 border-emerald-500">
+                    formattedHtml += `<div class="bg-emerald-100/50 p-3 rounded-lg border-l-4 border-emerald-500 text-sm md:text-base">
                         <span class="font-bold text-emerald-800">${label}:</span> <span class="text-gray-700">${content}</span>
                     </div>`;
                 }
@@ -416,9 +416,9 @@ function generatePlan() {
                     // Handle "Usmania Oil ka istemal" or other paragraphs
                     if (line.includes('Usmania Oil ka istemal')) {
                         const [label, content] = line.split(':');
-                        formattedHtml += `<p class="font-medium text-gray-800"><span class="font-bold text-emerald-700">${label}:</span> ${content}</p>`;
+                        formattedHtml += `<p class="font-medium text-gray-800 text-sm md:text-base"><span class="font-bold text-emerald-700">${label}:</span> ${content}</p>`;
                     } else {
-                        formattedHtml += `<p class="text-gray-700">${line}</p>`;
+                        formattedHtml += `<p class="text-gray-700 text-sm md:text-base">${line}</p>`;
                     }
                 }
             });
