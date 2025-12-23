@@ -481,17 +481,109 @@ function sendToWhatsApp(event) {
 // Make sure the function is globally accessible
 window.openUpiPayment = function () {
     const transactionId = 'UHO' + Date.now(); // Unique transaction ID
+    const amount = '99';
+    const upiId = '9520007159@ptyes';
+    const merchantName = 'Usmania Hair Oil';
+    const transactionNote = 'Usmania Hair Oil Advance Payment';
 
+    // Build UPI URL with all recommended parameters
     const upiParams = new URLSearchParams({
-        pa: '0952007159@ptyes',
-        pn: 'Usmania Hair Oil',
-        tn: 'Usmania Hair Oil Advance Payment',
-        am: '99',
-        cu: 'INR',
-        tr: transactionId, // Transaction Reference ID
+        pa: upiId,           // Payee VPA
+        pn: merchantName,    // Payee Name
+        tn: transactionNote, // Transaction Note
+        am: amount,          // Amount
+        cu: 'INR',           // Currency
+        tr: transactionId,   // Transaction Reference ID
+        mode: '02',          // Mode: 02 = QR scan, 00 = default
     });
 
     const upiUrl = `upi://pay?${upiParams.toString()}`;
 
+    // Try opening the UPI URL
+    const startTime = Date.now();
+
+    // Create a hidden iframe to try opening the UPI app (better for some devices)
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = upiUrl;
+    document.body.appendChild(iframe);
+
+    // Also try direct navigation as fallback
+    setTimeout(() => {
+        window.location.href = upiUrl;
+    }, 100);
+
+    // Check if app opened, otherwise show QR modal
+    setTimeout(() => {
+        // If we're still here after 2 seconds, the app probably didn't open
+        // Show QR code modal as fallback
+        document.body.removeChild(iframe);
+
+        // Check if page is still visible (app didn't open)
+        if (document.visibilityState === 'visible') {
+            showQrModal();
+        }
+    }, 2500);
+};
+
+// QR Code Modal for fallback
+window.showQrModal = function () {
+    // Remove existing modal if any
+    const existingModal = document.getElementById('qr-modal');
+    if (existingModal) existingModal.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'qr-modal';
+    modal.innerHTML = `
+        <div style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;" onclick="closeQrModal(event)">
+            <div style="background: white; border-radius: 20px; padding: 30px; max-width: 360px; width: 100%; text-align: center; position: relative;" onclick="event.stopPropagation()">
+                <button onclick="closeQrModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+                
+                <div style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="font-size: 18px; font-weight: bold; margin: 0;">Scan QR Code to Pay</h3>
+                    <p style="font-size: 14px; opacity: 0.9; margin: 5px 0 0 0;">Use any UPI app</p>
+                </div>
+                
+                <img src="assets/qr_code.jpg" alt="QR Code" style="width: 220px; height: 220px; margin: 0 auto 15px; border-radius: 12px; border: 3px solid #059669;">
+                
+                <p style="font-size: 24px; font-weight: bold; color: #059669; margin: 10px 0;">₹99</p>
+                
+                <p style="font-size: 12px; color: #666; font-family: monospace; background: #f3f4f6; padding: 8px; border-radius: 8px; margin: 15px 0;">
+                    UPI: 9520007159@ptyes
+                </p>
+                
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button onclick="tryGPay()" style="flex: 1; background: #4285f4; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer;">
+                        Try GPay
+                    </button>
+                    <button onclick="tryPhonePe()" style="flex: 1; background: #5f259f; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer;">
+                        Try PhonePe
+                    </button>
+                </div>
+                
+                <p style="font-size: 11px; color: #999; margin-top: 15px;">
+                    If buttons don't work, please scan the QR code above with your UPI app
+                </p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+};
+
+window.closeQrModal = function (event) {
+    const modal = document.getElementById('qr-modal');
+    if (modal) modal.remove();
+};
+
+// Try opening specific UPI apps
+window.tryGPay = function () {
+    const transactionId = 'UHO' + Date.now();
+    const upiUrl = `tez://upi/pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
+    window.location.href = upiUrl;
+};
+
+window.tryPhonePe = function () {
+    const transactionId = 'UHO' + Date.now();
+    const upiUrl = `phonepe://pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
     window.location.href = upiUrl;
 };
