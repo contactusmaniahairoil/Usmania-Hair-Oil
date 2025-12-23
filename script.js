@@ -533,7 +533,7 @@ window.showShareQrModal = function () {
                 </button>
 
                 <!-- Alternative: Direct App Buttons -->
-                <p style="font-size: 11px; color: #999; margin: 12px 0 8px 0;">Or open directly:</p>
+                <!-- <p style="font-size: 11px; color: #999; margin: 12px 0 8px 0;">Or open directly:</p>
                 <div style="display: flex; gap: 8px;">
                     <button onclick="tryGPay()" style="flex: 1; background: #4285f4; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;">
                         GPay
@@ -544,7 +544,7 @@ window.showShareQrModal = function () {
                     <button onclick="tryPaytm()" style="flex: 1; background: #00BAF2; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;">
                         Paytm
                     </button>
-                </div>
+                </div> -->
                 
                 <p style="font-size: 10px; color: #aaa; margin-top: 14px;">
                     After payment, send screenshot on WhatsApp 📸
