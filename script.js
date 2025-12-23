@@ -480,117 +480,115 @@ function sendToWhatsApp(event) {
 
 // Make sure the function is globally accessible
 window.openUpiPayment = async function () {
-    const transactionId = 'UHO' + Date.now();
-    const amount = '99';
-    const upiId = '9520007159@ptyes';
-    const merchantName = 'Usmania Hair Oil';
-
-    // 1. Try Native Share (User's Request)
-    // "Share the QR code image so user can select GPay/PhonePe"
-    try {
-        if (navigator.share) {
-            // Show a temporary instruction toast/alert
-            const toast = document.createElement('div');
-            toast.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #064e3b; color: white; padding: 12px 24px; border-radius: 50px; z-index: 10000; font-size: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-align: center; max-width: 90%;';
-            toast.innerHTML = 'Opening Share...<br><span style="font-size:12px; opacity:0.8">Select <b>GPay</b> or <b>PhonePe</b> to pay</span>';
-            document.body.appendChild(toast);
-
-            // Fetch the QR Code image
-            const response = await fetch('assets/qr_code.jpg');
-            const blob = await response.blob();
-            const file = new File([blob], 'payment_qr.jpg', { type: 'image/jpeg' });
-
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                await navigator.share({
-                    files: [file],
-                    title: 'Payment QR Code',
-                    text: 'Select your payment app (Google Pay / PhonePe) to scan this QR and pay ₹99.',
-                });
-
-                // Remove toast after share actions
-                setTimeout(() => toast.remove(), 2000);
-                return; // Stop here if share initiated successfully
-            }
-            toast.remove();
-        }
-    } catch (err) {
-        console.warn('Share API failed or closed, falling back to Deep Link:', err);
-        // Remove toast if it exists
-        const existingToast = document.querySelector('div[style*="background: #064e3b"]');
-        if (existingToast) existingToast.remove();
-    }
-
-    // 2. Fallback: Deep Link Strategy (Previous Implementation)
-    startDeepLinkFlow(transactionId, upiId, merchantName, amount);
+    // Show the share modal with instructions
+    showShareQrModal();
 };
 
-function startDeepLinkFlow(transactionId, upiId, merchantName, amount) {
-    const transactionNote = 'Usmania Hair Oil Advance Payment';
-    const upiParams = new URLSearchParams({
-        pa: upiId,
-        pn: merchantName,
-        tn: transactionNote,
-        am: amount,
-        cu: 'INR',
-        tr: transactionId,
-        mode: '02',
-    });
-
-    const upiUrl = `upi://pay?${upiParams.toString()}`;
-
-    // Try opening the UPI URL
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = upiUrl;
-    document.body.appendChild(iframe);
-
-    // Also try direct navigation
-    setTimeout(() => {
-        window.location.href = upiUrl;
-    }, 100);
-
-    // Fallback to QR Modal if app doesn't open
-    setTimeout(() => {
-        document.body.removeChild(iframe);
-        if (document.visibilityState === 'visible') {
-            showQrModal();
-        }
-    }, 2500);
-}
-
-// QR Code Modal for fallback
-window.showQrModal = function () {
+// Share QR Modal with instructions
+window.showShareQrModal = function () {
+    // Remove existing modal if any
     const existingModal = document.getElementById('qr-modal');
     if (existingModal) existingModal.remove();
 
     const modal = document.createElement('div');
     modal.id = 'qr-modal';
     modal.innerHTML = `
-        <div style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;" onclick="closeQrModal(event)">
-            <div style="background: white; border-radius: 20px; padding: 30px; max-width: 360px; width: 100%; text-align: center; position: relative;" onclick="event.stopPropagation()">
-                <button onclick="closeQrModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+        <div style="position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(8px);" onclick="closeQrModal(event)">
+            <div style="background: white; border-radius: 24px; padding: 24px; max-width: 380px; width: 100%; text-align: center; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3);" onclick="event.stopPropagation()">
+                <button onclick="closeQrModal()" style="position: absolute; top: 12px; right: 12px; background: #f3f4f6; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 20px; cursor: pointer; color: #666; display: flex; align-items: center; justify-content: center;">&times;</button>
                 
-                <div style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
-                    <h3 style="font-size: 18px; font-weight: bold; margin: 0;">Scan QR Code to Pay</h3>
-                    <p style="font-size: 14px; opacity: 0.9; margin: 5px 0 0 0;">Open GPay/PhonePe & Scan</p>
+                <!-- Header -->
+                <div style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 16px; border-radius: 16px; margin-bottom: 20px;">
+                    <h3 style="font-size: 20px; font-weight: bold; margin: 0;">Pay ₹99</h3>
+                    <p style="font-size: 13px; opacity: 0.9; margin: 4px 0 0 0;">Usmania Hair Oil - Advance Payment</p>
+                </div>
+
+                <!-- Instructions -->
+                <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 12px; margin-bottom: 16px; text-align: left;">
+                    <p style="font-size: 13px; color: #92400e; margin: 0; font-weight: 600;">📱 How to Pay:</p>
+                    <ol style="font-size: 12px; color: #92400e; margin: 8px 0 0 0; padding-left: 20px;">
+                        <li style="margin-bottom: 4px;">Click <b>"Share QR to Pay"</b> button below</li>
+                        <li style="margin-bottom: 4px;">Select your UPI app (GPay, PhonePe, Paytm, etc.)</li>
+                        <li>Pay ₹99 and take a screenshot!</li>
+                    </ol>
                 </div>
                 
-                <img src="assets/qr_code.jpg" alt="QR Code" style="width: 220px; height: 220px; margin: 0 auto 15px; border-radius: 12px; border: 3px solid #059669;">
+                <!-- QR Code -->
+                <img id="qr-code-img" src="assets/qr_code.jpg" alt="QR Code" style="width: 180px; height: 180px; margin: 0 auto 12px; border-radius: 12px; border: 3px solid #059669; display: block;">
                 
-                <p style="font-size: 24px; font-weight: bold; color: #059669; margin: 10px 0;">₹99</p>
+                <p style="font-size: 11px; color: #666; font-family: monospace; background: #f3f4f6; padding: 8px; border-radius: 8px; margin: 12px 0;">
+                    UPI: 9520007159@ptyes
+                </p>
                 
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                    <button onclick="tryGPay()" style="flex: 1; background: #4285f4; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer;">
-                        Open GPay
+                <!-- Main Share Button -->
+                <button onclick="shareQrCode()" style="width: 100%; background: linear-gradient(135deg, #059669, #047857); color: white; border: none; padding: 16px; border-radius: 14px; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 12px; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    Share QR to Pay
+                </button>
+
+                <!-- Alternative: Direct App Buttons -->
+                <p style="font-size: 11px; color: #999; margin: 12px 0 8px 0;">Or open directly:</p>
+                <div style="display: flex; gap: 8px;">
+                    <button onclick="tryGPay()" style="flex: 1; background: #4285f4; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;">
+                        GPay
                     </button>
-                    <button onclick="tryPhonePe()" style="flex: 1; background: #5f259f; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: bold; cursor: pointer;">
-                        Open PhonePe
+                    <button onclick="tryPhonePe()" style="flex: 1; background: #5f259f; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;">
+                        PhonePe
+                    </button>
+                    <button onclick="tryPaytm()" style="flex: 1; background: #00BAF2; color: white; border: none; padding: 12px; border-radius: 10px; font-weight: 600; font-size: 13px; cursor: pointer;">
+                        Paytm
                     </button>
                 </div>
+                
+                <p style="font-size: 10px; color: #aaa; margin-top: 14px;">
+                    After payment, send screenshot on WhatsApp 📸
+                </p>
             </div>
         </div>
     `;
     document.body.appendChild(modal);
+};
+
+// Share QR Code using Web Share API
+window.shareQrCode = async function () {
+    try {
+        // Fetch the QR code image and convert to blob
+        const response = await fetch('assets/qr_code.jpg');
+        const blob = await response.blob();
+
+        // Create a file from the blob
+        const file = new File([blob], 'Usmania_Hair_Oil_Payment_QR.jpg', { type: 'image/jpeg' });
+
+        // Check if Web Share API with files is supported
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({
+                title: 'Usmania Hair Oil - Pay ₹99',
+                text: 'Scan this QR code in any UPI app (GPay, PhonePe, Paytm) to pay ₹99 for Usmania Hair Oil.',
+                files: [file]
+            });
+        } else if (navigator.share) {
+            // Fallback: Share without file (just text and link)
+            await navigator.share({
+                title: 'Usmania Hair Oil - Pay ₹99',
+                text: 'Pay ₹99 to UPI ID: 9520007159@ptyes for Usmania Hair Oil Advance Payment.'
+            });
+        } else {
+            // No share API available, show fallback message
+            alert('Share not supported on this browser. Please scan the QR code with your UPI app or use the buttons below.');
+        }
+    } catch (error) {
+        if (error.name !== 'AbortError') {
+            console.error('Share failed:', error);
+            // User cancelled or error occurred
+            alert('Could not share. Please scan the QR code with your UPI app or use the GPay/PhonePe buttons.');
+        }
+    }
 };
 
 window.closeQrModal = function (event) {
@@ -601,7 +599,7 @@ window.closeQrModal = function (event) {
 // Try opening specific UPI apps
 window.tryGPay = function () {
     const transactionId = 'UHO' + Date.now();
-    const upiUrl = `tez://upi/pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
+    const upiUrl = `upi://pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
     window.location.href = upiUrl;
 };
 
@@ -610,4 +608,9 @@ window.tryPhonePe = function () {
     const upiUrl = `phonepe://pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
     window.location.href = upiUrl;
 };
-```
+
+window.tryPaytm = function () {
+    const transactionId = 'UHO' + Date.now();
+    const upiUrl = `paytmmp://pay?pa=9520007159@ptyes&pn=Usmania%20Hair%20Oil&am=99&cu=INR&tn=Advance%20Payment&tr=${transactionId}`;
+    window.location.href = upiUrl;
+};
